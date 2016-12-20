@@ -1,5 +1,6 @@
 <?php
     include '../../connect.php';
+    $mustawadata = mysqli_query($con, "SELECT * FROM mustawadata");
 ?>
 <h4>Hasil pengajian</h4>
 
@@ -17,10 +18,9 @@
                     <select class="form-control">
                         <option>--TAHUN--</option>
                         <?php
-                            $mustawadata = mysqli_query($con, "SELECT * FROM mustawadata ORDER BY mustawaData_id DESC");
-                            while($mustawadata = mysqli_fetch_array($mustawadata)){
+                            while($mustawadataResult = mysqli_fetch_array($mustawadata)){
                         ?>
-                        <option><?= $mustawadata['mustawaData_id'] ?></option>
+                        <option><?= $mustawadataResult['level'] ?></option>
                         <?php
                             }
                         ?>
