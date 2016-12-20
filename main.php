@@ -129,6 +129,9 @@
                             case 'attendance':
                                 include 'content/attendance/index.php';
                                 break;
+                            case 'mustawa':
+                                include 'content/mustawa/index.php';
+                                break;
                         }
             ?>
          

@@ -641,3 +641,4 @@ function deleteMustawaHistory(mustawa_register_id, st_id){
         ajaxLoadFrw('get', URL, data, '');
     }
 }
+//----------------------------------------------Mustawa------------------------------------------------------------
