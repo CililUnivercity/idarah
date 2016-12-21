@@ -642,3 +642,10 @@ function deleteMustawaHistory(mustawa_register_id, st_id){
     }
 }
 //----------------------------------------------Mustawa------------------------------------------------------------
+function mustawaProgramSelect(){
+    var mustawaData_id = document.getElementById('mustawaData_id').value;
+    var URL = "content/mustawa/action/mustawaProgramSelect.php?dummy=" + Math.random();
+    var data = "&mustawaData_id=" + mustawaData_id;
+    document.getElementById('selectAlert').innerHTML = "Loading...";
+    ajaxLoadFrw('post', URL, data, '');
+}
