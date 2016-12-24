@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-lg-2">
                     <select class="form-control" name="mustawaData_id" id="mustawaData_id" onchange="mustawaProgramSelect()">
-                        <option>--Program--</option>
+                        <option value="0">--Program--</option>
                         <?php
                             while($mustawadataResult = mysqli_fetch_array($mustawadata)){
                         ?>
@@ -38,9 +38,9 @@
         </form>
         
         <div align="center">
-            <a class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span> Cari</a>
+            <a class="btn btn-success btn-sm" onclick="mustawaResultSerach()"><span class="glyphicon glyphicon-search"></span> Cari</a>
         </div>
-    
+        <div align="center" id="process"></div>
     <div id="search">
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>

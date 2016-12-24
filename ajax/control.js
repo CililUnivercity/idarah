@@ -649,3 +649,17 @@ function mustawaProgramSelect(){
     document.getElementById('selectAlert').innerHTML = "Loading...";
     ajaxLoadFrw('post', URL, data, '');
 }
+function mustawaResultSerach(){
+    var mustawaData_id = document.getElementById('mustawaData_id').value;
+    var group = document.getElementById('group').value;
+    if(mustawaData_id=='0'){
+        document.getElementById('mustawaData_id').focus();
+    }else if(group=='0'){
+        document.getElementById('group').focus();
+    }else{
+        var URL = "content/mustawa/action/mustawaResultSerach.php?dummy=" + Math.random();
+        var data = getFrmData('mustawaSearch');
+        document.getElementById('process').innerHTML = "Processing...";
+        ajaxLoadFrw('post', URL, data, 'subcontent');
+    }
+}

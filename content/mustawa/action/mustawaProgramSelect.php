@@ -16,12 +16,16 @@ $javascript = <<<JS
             }
 JS;
 $response = $javascript;
-    for($i=1;$i<=$group_number;$i++){
-        
+    for($i=0;$i<=$group_number;$i++){
+        if($i==0){
+            $optionText = "--Pilih--";
+        }else{
+            $optionText = $i;
+        }
 $javascript = <<<JS
         var opt = document.createElement('option');
             opt.value = "{$i}";
-            opt.text = "{$i}";
+            opt.text = "{$optionText}";
             document.getElementById('group').add(opt);
 JS;
     $response .= $javascript;
