@@ -659,7 +659,7 @@ function mustawaResultSerach(){
     }else{
         var URL = "content/mustawa/action/mustawaResultSerach.php?dummy=" + Math.random();
         var data = getFrmData('mustawaSearch');
-        document.getElementById('process').innerHTML = "Processing...";
+        document.getElementById('subcontent').innerHTML = "Processing...";
         ajaxLoadFrw('post', URL, data, 'subcontent');
     }
 }

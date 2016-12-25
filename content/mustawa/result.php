@@ -40,9 +40,9 @@
         <div align="center">
             <a class="btn btn-success btn-sm" onclick="mustawaResultSerach()"><span class="glyphicon glyphicon-search"></span> Cari</a>
         </div>
-        <div align="center" id="process"></div>
-    <div id="search">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br>   
+    <div id="subcontent">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
     
 </div>
