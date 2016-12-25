@@ -18,7 +18,6 @@
                         <td align="center"><b>NAMA - NASAB</b></td>
                         <td align="center"><div id='subText'>نام<b> - نسب</b></div></td>
                         <td align="center"><b>FAKULTI & JURUSAN</b></td>
-                        <td align="center"><b>GRUP</b></td>
                         <td align="center"><b>HASIL PENGAJIAN</b></td>
                     </tr>
                 </thead>
@@ -26,7 +25,9 @@
 RS;
     $i = 1;
     while($result1 = mysqli_fetch_array($sql1)){
+        $mustawa_register_id = $result1['mustawa_register_id'];
         $st_id = $result1['st_id'];
+        $learningStatus = $result1['learningStatus'];
         
         $sql2 = mysqli_query($con, "SELECT * FROM students WHERE st_id='$st_id'");
         $result2 = mysqli_fetch_array($sql2);
@@ -41,18 +42,32 @@ RS;
         $result3 = mysqli_fetch_array($sql3);
         $ft_name = str_replace("\'", "&#39;", $result3["ft_name"]);
         
+        if($learningStatus==1){
+            $lulus = 'checked="checked"';
+            $tidak = '';
+        }else if($learningStatus==2){
+            $lulus = '';
+            $tidak = 'checked="checked"';
+        }else{
+            $lulus = '';
+            $tidak = '';
+        }
+        
         $tbody = <<<TBODY
             <tr>
                 <td align="center">{$i}</td>
                 <td>{$fname_rumi} - {$lname_rumi}</td>
                 <td align="right"><div id="subText">{$fname_jawi} - {$lname_jawi}</div></td>
                 <td align="left">{$ft_name}</td>
-                <td align="center">{$i}</td>
                 <td align="center">
-                    <form name={$i}>
-                        <input type="radio" id="lang_skill1" name="arab_lang_skill" value="Kurang" > Lulus 
-                        &nbsp;&nbsp;
-                        <input type="radio" id="lang_skill1" name="arab_lang_skill" value="Kurang" > Tidak
+                    <form class='form-horizontal'>
+                        <div class='form-group'>
+                            <input type="radio" id="mr1$mustawa_register_id" name="$mustawa_register_id" value='1' onclick="studyResultSave(this.id, $i)" $lulus> Lulus 
+                            &nbsp;&nbsp;
+                            <input type="radio" id="mr2$mustawa_register_id" name="$mustawa_register_id" value='2' onclick="studyResultSave(this.id, $i)" $tidak> Tidak
+                            
+                        </div>
+                        <div id='savingAlert$i'></div>
                     </form>
                 </td>
             </tr>

@@ -663,3 +663,11 @@ function mustawaResultSerach(){
         ajaxLoadFrw('post', URL, data, 'subcontent');
     }
 }
+function studyResultSave(id, savingAlert){
+    var valueSet = document.getElementById(id).value;
+    var URL = "content/mustawa/action/mustawaResultSave.php?dummy=" + Math.random();
+    var data = "&mustawa_register_id=" + id + "&valueSet=" + valueSet + "&savingAlert=" + savingAlert;
+    var savingAlertText = "savingAlert" + savingAlert;
+    document.getElementById(savingAlertText).innerHTML = "Processing...";
+    ajaxLoadFrw('post', URL, data, 'subcontent');
+}
