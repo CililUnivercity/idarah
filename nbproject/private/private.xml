@@ -3,16 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/system/module/dol/scoreSave.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/listDelete.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/dulRegister.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/listSearch.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/query.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/list.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/search.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/main.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/index.php</file>
-            <file>file:/C:/xampp/htdocs/system/module/dol/subjectList.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/payment/report/statisticData.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/payment/report/function/function.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/payment/report/index.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/payment/report/action/yuranReportByterm.php</file>
         </group>
     </open-files>
 </project-private>

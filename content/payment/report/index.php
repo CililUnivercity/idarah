@@ -102,38 +102,42 @@
                 
                 <tr align="center">
                     <td align="center">1</td>
-                    <td align="center"><font color="orange"><?= $pai12Count ?></font> | <font color="green"><?= $pai12CountPayed ?></font> | <font color="red"><?= $pai12CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $pbsm12Count ?></font> | <font color="green"><?= $pbsm12CountPayed ?></font> | <font color="red"><?= $pbsm12CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $sya12Count ?></font> | <font color="green"><?= $sya12CountPayed ?></font> | <font color="red"><?= $sya12CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $usu12Count ?></font> | <font color="green"><?= $usu12CountPayed ?></font> | <font color="red"><?= $usu12CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $dir12Count ?></font> | <font color="green"><?= $dir12CountPayed ?></font> | <font color="red"><?= $dir12CountNotPay ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai12Count ?></font> | <font color="green"><?= $pai12CountPayed ?></font> | <font color="red"><?= $pai12Count - $pai12CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $pbsm12Count ?></font> | <font color="green"><?= $pbsm12CountPayed ?></font> | <font color="red"><?= $pbsm12Count - $pbsm12CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $sya12Count ?></font> | <font color="green"><?= $sya12CountPayed ?></font> | <font color="red"><?= $sya12Count - $sya12CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $usu12Count ?></font> | <font color="green"><?= $usu12CountPayed ?></font> | <font color="red"><?= $usu12Count - $usu12CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $dir12Count ?></font> | <font color="green"><?= $dir12CountPayed ?></font> | <font color="red"><?= $dir12Count - $dir12CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai12Count + $pbsm12Count + $sya12Count + $usu12Count + $dir12Count ?></font> | <font color="green"><?= $pai12CountPayed + $pbsm12CountPayed + $sya12CountPayed + $usu12CountPayed + $dir12CountPayed ?></font> | <font color="red"><?= ($pai12Count - $pai12CountPayed) + ($pbsm12Count - $pbsm12CountPayed) + ($sya12Count - $sya12CountPayed) + ($usu12Count - $usu12CountPayed) + ($dir12Count - $dir12CountPayed) ?></font></td>
                 </tr>
             
                 <tr align="center">
                     <td align="center">2</td>
-                    <td align="center"><font color="orange"><?= $pai22Count ?></font> | <font color="green"><?= $pai22CountPayed ?></font> | <font color="red"><?= $pai22CountNotPay ?></font></td></td>
-                    <td align="center"><font color="orange"><?= $pbsm22Count ?></font> | <font color="green"><?= $pbsm22CountPayed ?></font> | <font color="red"><?= $pbsm22CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $sya22Count ?></font> | <font color="green"><?= $sya22CountPayed ?></font> | <font color="red"><?= $sya22CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $usu22Count ?></font> | <font color="green"><?= $usu22CountPayed ?></font> | <font color="red"><?= $usu22CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $dir22Count ?></font> | <font color="green"><?= $dir22CountPayed ?></font> | <font color="red"><?= $dir22CountNotPay ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai22Count ?></font> | <font color="green"><?= $pai22CountPayed ?></font> | <font color="red"><?= $pai22Count - $pai22CountPayed ?></font></td></td>
+                    <td align="center"><font color="orange"><?= $pbsm22Count ?></font> | <font color="green"><?= $pbsm22CountPayed ?></font> | <font color="red"><?= $pbsm22Count - $pbsm22CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $sya22Count ?></font> | <font color="green"><?= $sya22CountPayed ?></font> | <font color="red"><?= $sya22Count -  $sya22CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $usu22Count ?></font> | <font color="green"><?= $usu22CountPayed ?></font> | <font color="red"><?= $usu22Count - $usu22CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $dir22Count ?></font> | <font color="green"><?= $dir22CountPayed ?></font> | <font color="red"><?= $dir22Count -  $dir22CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai22Count + $pbsm22Count + $sya22Count + $usu22Count + $dir22Count ?></font> | <font color="green"><?= $pai22CountPayed + $pbsm22CountPayed + $sya22CountPayed + $usu22CountPayed + $dir22CountPayed ?></font> | <font color="red"><?= ($pai22Count - $pai22CountPayed) + ($pbsm22Count - $pbsm22CountPayed) + ($sya22Count - $sya22CountPayed) + ($usu22Count - $usu22CountPayed) + ($dir22Count - $dir22CountPayed) ?></font></td>
                 </tr>
                 
                 <tr align="center">
                     <td align="center">3</td>
-                    <td align="center"><font color="orange"><?= $pai32Count ?></font> | <font color="green"><?= $pai32CountPayed ?></font> | <font color="red"><?= $pai32CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $pbsm32Count ?></font> | <font color="green"><?= $pbsm32CountPayed ?></font> | <font color="red"><?= $pbsm32CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $sya12Count ?></font> | <font color="green"><?= $sya32CountPayed ?></font> | <font color="red"><?= $sya32CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $usu12Count ?></font> | <font color="green"><?= $usu32CountPayed ?></font> | <font color="red"><?= $usu32CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $dir12Count ?></font> | <font color="green"><?= $dir32CountPayed ?></font> | <font color="red"><?= $dir32CountNotPay ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai32Count ?></font> | <font color="green"><?= $pai32CountPayed ?></font> | <font color="red"><?= $pai32Count - $pai32CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $pbsm32Count ?></font> | <font color="green"><?= $pbsm32CountPayed ?></font> | <font color="red"><?= $pbsm32Count - $pbsm32CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $sya32Count ?></font> | <font color="green"><?= $sya32CountPayed ?></font> | <font color="red"><?= $sya32Count - $sya32CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $usu32Count ?></font> | <font color="green"><?= $usu32CountPayed ?></font> | <font color="red"><?= $usu32Count - $usu32CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $dir32Count ?></font> | <font color="green"><?= $dir32CountPayed ?></font> | <font color="red"><?= $dir32Count - $dir32CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai32Count + $pbsm32Count + $sya32Count + $usu32Count + $dir32Count ?></font> | <font color="green"><?= $pai32CountPayed + $pbsm32CountPayed + $sya32CountPayed + $usu32CountPayed + $dir32CountPayed ?></font> | <font color="red"><?= ($pai32Count - $pai32CountPayed) + ($pbsm32Count - $pbsm32CountPayed) + ($sya32Count - $sya32CountPayed) + ($usu32Count - $usu32CountPayed) + ($dir32Count - $dir32CountPayed) ?></font></td>
                 </tr>
                 
                 <tr align="center">
                     <td align="center">4</td>
-                    <td align="center"><font color="orange"><?= $pai42Count ?></font> | <font color="green"><?= $pai42CountPayed ?></font> | <font color="red"><?= $pai42CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $pbsm42Count ?></font> | <font color="green"><?= $pbsm42CountPayed ?></font> | <font color="red"><?= $pbsm42CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $sya42Count ?></font> | <font color="green"><?= $sya42CountPayed ?></font> | <font color="red"><?= $sya42CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $usu42Count ?></font> | <font color="green"><?= $usu42CountPayed ?></font> | <font color="red"><?= $usu42CountNotPay ?></font></td>
-                    <td align="center"><font color="orange"><?= $dir42Count ?></font> | <font color="green"><?= $dir42CountPayed ?></font> | <font color="red"><?= $dir42CountNotPay ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai42Count ?></font> | <font color="green"><?= $pai42CountPayed ?></font> | <font color="red"><?= $pai42Count - $pai42CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $pbsm42Count ?></font> | <font color="green"><?= $pbsm42CountPayed ?></font> | <font color="red"><?= $pbsm42Count - $pbsm42CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $sya42Count ?></font> | <font color="green"><?= $sya42CountPayed ?></font> | <font color="red"><?= $sya42Count - $sya42CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $usu42Count ?></font> | <font color="green"><?= $usu42CountPayed ?></font> | <font color="red"><?= $usu42Count - $usu42CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $dir42Count ?></font> | <font color="green"><?= $dir42CountPayed ?></font> | <font color="red"><?= $dir42Count - $dir42CountPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $pai42Count + $pbsm42Count + $sya42Count + $usu42Count + $dir42Count ?></font> | <font color="green"><?= $pai42CountPayed + $pbsm42CountPayed + $sya42CountPayed + $usu42CountPayed + $dir42CountPayed ?></font> | <font color="red"><?= ($pai42Count - $pai42CountPayed) + ($pbsm42Count - $pbsm42CountPayed) + ($sya42Count - $sya42CountPayed) + ($usu42Count - $usu42CountPayed) + ($dir42Count - $dir42CountPayed) ?></font></td>
                 </tr>
                 
                 <tr align="center">
@@ -143,6 +147,12 @@
                     <td align="center"><font color="orange"><?= $sum_sya2_register ?></font> | <font color="green"><?= $sum_sya2_payed ?></font> | <font color="red"><?= $sum_sya2_notPayed ?></font></td>
                     <td align="center"><font color="orange"><?= $sum_usu2_register ?></font> | <font color="green"><?= $sum_usu2_payed ?></font> | <font color="red"><?= $sum_usu2_notPayed ?></font></td>
                     <td align="center"><font color="orange"><?= $sum_dir2_register ?></font> | <font color="green"><?= $sum_dir2_payed ?></font> | <font color="red"><?= $sum_dir2_notPayed ?></font></td>
+                    <td align="center"><font color="orange"><?= $sum_pai2_register + $sum_pbsm2_register + $sum_sya2_register + $sum_usu2_register + $sum_dir2_register  ?></font> | <font color="green"><?= $sum_pai2_payed + $sum_pbsm2_payed + $sum_sya2_payed + $sum_usu2_payed + $sum_dir2_payed + $sum_dir2_payed  ?></font> | <font color="red"><?= $sum_pai2_notPayed + $sum_pbsm2_notPayed + $sum_sya2_notPayed + $sum_usu2_notPayed + $sum_dir2_notPayed + $sum_dir2_notPayed  ?></font></td>
+                </tr>
+                
+                <tr align="center">
+                    <td align="center">TOTAL DUIT</td>
+                    <td colspan="6" align="left"><?= number_format($resultTotalMoney2) ?> ฿</td>
                 </tr>
                 
             </table>

@@ -1435,7 +1435,19 @@
         $sumExam_dir2_notPayed = $exam_dir12CountNotPay + $exam_dir22CountNotPay + $exam_dir32CountNotPay + $exam_dir42CountNotPay;
 
         //SUM MONEY ALL FACULTY
-        $totalMoney1 = mysqli_query($con, "SELECT sum(p.money) AS sumMoney,sr.*,p.* FROM student_register sr INNER JOIN payments p ON sr.sr_id=p.sr_id WHERE sr.academic_year='$cy' AND sr.term='1' AND sr.rs_type!=''");
+        $totalMoney1 = mysqli_query($con, "SELECT sum(p.money) AS totalMoney,sr.*,p.*,s.* FROM student_register sr
+                                   INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                                   INNER JOIN students s ON sr.st_id=s.st_id
+                                   WHERE sr.academic_year='$cy' AND sr.term='1' AND s.program='0'
+                                   ");
         $rowTotalMoney1 = mysqli_fetch_array($totalMoney1);
-        $resultTotalMoney1 = $rowTotalMoney1['sumMoney'];
+        $resultTotalMoney1 = $rowTotalMoney1['totalMoney'];
+        
+        $totalMoney2 = mysqli_query($con, "SELECT sum(p.money) AS totalMoney,sr.*,p.*,s.* FROM student_register sr
+                                   INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                                   INNER JOIN students s ON sr.st_id=s.st_id
+                                   WHERE sr.academic_year='$cy' AND sr.term='2' AND s.program='0'
+                                   ");
+        $rowTotalMoney2 = mysqli_fetch_array($totalMoney2);
+        $resultTotalMoney2 = $rowTotalMoney2['totalMoney'];
 ?>
