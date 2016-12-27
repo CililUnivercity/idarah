@@ -36,12 +36,12 @@
     //Get student data for update score
     if($department == "0"){
     $score = mysqli_query($con, "SELECT s.*,ss.* FROM students s
-                         INNER JOIN studentSubject ss ON s.st_id=ss.st_id
-                         WHERE s.ft_id='$faculty' and ss.ss_year='$year' and ss.s_id='$subject' ORDER BY s.student_id");
+                         INNER JOIN studentsubject ss ON s.st_id=ss.st_id
+                         WHERE s.ft_id='$faculty' and ss.ss_year='$year' and ss.s_id='$subject' and s.student_id!='' ORDER BY s.student_id");
     }else{
     $score = mysqli_query($con, "SELECT s.*,ss.* FROM students s
-                         INNER JOIN studentSubject ss ON s.st_id=ss.st_id
-                         WHERE s.ft_id='$faculty' and s.dp_id='$department' and ss.ss_year='$year' and ss.s_id='$subject' ORDER BY s.student_id");    
+                         INNER JOIN studentsubject ss ON s.st_id=ss.st_id
+                         WHERE s.ft_id='$faculty' and s.dp_id='$department' and ss.ss_year='$year' and ss.s_id='$subject' and s.student_id!='' ORDER BY s.student_id");    
     }
  ?>
 <div class="pull-left">

@@ -6,7 +6,7 @@
             $score= $_POST['ss_score'][$i];
             $id = $_POST['id'][$i];
 
-            $query = mysqli_query($con, "UPDATE studentSubject SET ss_score = '$score' WHERE ss_id = '$id' LIMIT 1") ;
+            $query = mysqli_query($con, "UPDATE studentsubject SET ss_score = '$score' WHERE ss_id = '$id' LIMIT 1") ;
             ++$i;
 }
 ?>

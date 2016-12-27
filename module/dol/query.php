@@ -10,7 +10,7 @@
 <h5><b>Hasil perkuliahan mahasiswa</b></h5> 
 <font color="grey"><b><span class="glyphicon glyphicon-user"></span> <?= $fName ?>-<?= $lName ?> : <?= $student_id ?></b></font>
 <?php
-    $studentSubject = mysqli_query($con, "SELECT s.*,ss.*,t.* FROM studentSubject ss
+    $studentSubject = mysqli_query($con, "SELECT s.*,ss.*,t.* FROM studentsubject ss
                                    INNER JOIN subject s ON ss.s_id=s.s_id
                                    INNER JOIN teachers t ON ss.t_id=t.t_id
                                    WHERE st_id='$id' and ss_score < 50 and ss_score!='' ");

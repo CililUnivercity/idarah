@@ -65,9 +65,8 @@ RS;
                             <input type="radio" id="mr1$mustawa_register_id" name="$mustawa_register_id" value='1' onclick="studyResultSave(this.id, $i)" $lulus> Lulus 
                             &nbsp;&nbsp;
                             <input type="radio" id="mr2$mustawa_register_id" name="$mustawa_register_id" value='2' onclick="studyResultSave(this.id, $i)" $tidak> Tidak
-                            
+                            <div id='savingAlert$i'></div>
                         </div>
-                        <div id='savingAlert$i'></div>
                     </form>
                 </td>
             </tr>

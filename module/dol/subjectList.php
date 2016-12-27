@@ -21,14 +21,14 @@
     
     //Get subject data
     $dulSubject = mysqli_query($con, "SELECT ds.*,ss.* FROM dulSubject ds
-                               INNER JOIN studentSubject ss ON ds.ss_id=ss.ss_id
+                               INNER JOIN studentsubject ss ON ds.ss_id=ss.ss_id
                                WHERE dr_id='$id'");
     while($row = mysqli_fetch_array($dulSubject)){
         $ss_id = $row['ss_id']
 ?>
         <tr>
             <?php
-                $studentSubject = mysqli_query($con, "SELECT ss.*,s.* FROM studentSubject ss INNER JOIN subject s ON ss.s_id=s.s_id WHERE ss_id='$ss_id'");
+                $studentSubject = mysqli_query($con, "SELECT ss.*,s.* FROM studentsubject ss INNER JOIN subject s ON ss.s_id=s.s_id WHERE ss_id='$ss_id'");
                 $rowStudentSubject = mysqli_fetch_array($studentSubject);
                 $code = $rowStudentSubject['s_code'];
                 $subjectName = $rowStudentSubject['s_rumiName'];

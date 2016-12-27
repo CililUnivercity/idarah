@@ -671,3 +671,6 @@ function studyResultSave(id, savingAlert){
     document.getElementById(savingAlertText).innerHTML = "Processing...";
     ajaxLoadFrw('post', URL, data, 'subcontent');
 }
+function acceptScore(){
+    document.getElementById("score").disabled = false;
+}

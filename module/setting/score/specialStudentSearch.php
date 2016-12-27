@@ -40,12 +40,12 @@
     //Get student data for update score
     if($department == "0"){
     $score = mysqli_query($con, "SELECT s.*,ss.* FROM students s
-                         INNER JOIN studentSubject ss ON s.st_id=ss.st_id
-                         WHERE s.ft_id='$faculty' and ss.ss_year='$year' and ss.s_id='$subject' ORDER BY s.student_id");
+                         INNER JOIN studentsubject ss ON s.st_id=ss.st_id
+                         WHERE s.ft_id='$faculty' and ss.ss_year='$year' and ss.s_id='$subject' and s.student_id!='' ORDER BY s.student_id ");
     }else{
     $score = mysqli_query($con, "SELECT s.*,ss.* FROM students s
-                         INNER JOIN studentSubject ss ON s.st_id=ss.st_id
-                         WHERE s.ft_id='$faculty' and s.dp_id='$department' and ss.ss_year='$year' and ss.s_id='$subject' ORDER BY s.student_id");    
+                         INNER JOIN studentsubject ss ON s.st_id=ss.st_id
+                         WHERE s.ft_id='$faculty' and s.dp_id='$department' and ss.ss_year='$year' and ss.s_id='$subject' and s.student_id!='' ORDER BY s.student_id");    
     }
 
  ?>
@@ -93,7 +93,7 @@
                 echo "<td align='center'>{$student_id}<input type='hidden' name='id[$i]' value='{$ssId}' /></td>";
                 echo "<td>{$fnameR} - {$lnameR}</td>";
                 echo "<td align='right'>{$fnameJ} - {$lnameJ}</td>";
-                echo "<td width='10px'><input type='text' name='score[$i]' value='{$sScore}' class='form-control input-sm'/></td>";
+                echo "<td width='10px'><input type='text' name='score[$i]' value='{$sScore}' class='form-control input-sm' id='score'/></td>";
                 echo '</tr>';
                 ++$i;
              }

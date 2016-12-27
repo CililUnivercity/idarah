@@ -12,6 +12,6 @@
     
     $UPDATE = mysqli_query($con, "UPDATE mustawa_register SET learningStatus='$valueSet' WHERE mustawa_register_id='$mr_id'");
     //echo "alert('savingAlert$savingAlert');";
-    echo "document.getElementById('savingAlert$savingAlert').innerHTML = '<span class=\'glyphicon glyphicon-ok\'></span>';";
+    echo "document.getElementById('savingAlert$savingAlert').innerHTML = '<span class=\'glyphicon glyphicon-ok\'></span> <font color=\'green\'>saved</font>';";
 ?>
 
