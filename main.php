@@ -39,6 +39,7 @@
     <script type="text/javascript" src="tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="ajax/framework.js"></script>
     <script type="text/javascript" src="ajax/control.js"></script>
+    <script type="text/javascript" src="ajax/global.js"></script>
     <style type="text/css">
         .img
             { background:#ffffff;

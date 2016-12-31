@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/system/content/payment/report/statisticData.php</file>
-            <file>file:/C:/xampp/htdocs/system/content/payment/report/function/function.php</file>
-            <file>file:/C:/xampp/htdocs/system/content/payment/report/index.php</file>
-            <file>file:/C:/xampp/htdocs/system/content/payment/report/action/yuranReportByterm.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/timeTable/subjectAdd.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/timeTable/action/timeTableSelectProgram.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/mustawa/result.php</file>
+            <file>file:/C:/xampp/htdocs/system/content/mustawa/action/mustawaProgramSelect.php</file>
+            <file>file:/C:/xampp/htdocs/system/ajax/global.js</file>
+            <file>file:/C:/xampp/htdocs/system/ajax/control.js</file>
         </group>
     </open-files>
 </project-private>

@@ -12,6 +12,8 @@
   <a href="?page=setting&&settingpage=subject" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> Mata kuliah</a>
   <a href="?page=setting&&settingpage=teacher" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> Data pensyarah</a>
   <a href="?page=setting&&settingpage=specialScore" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> Pengurusan markah</a>
+  <a href="?page=setting&&settingpage=timeTable" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> Jadwal</a>
+  <a href="?page=setting&&settingpage=scoreTracing" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> Pengesan</a>
   <a href="?page=setting&&settingpage=setting" class="btn btn-default"><span class="glyphicon glyphicon-cog"></span> SETTING</a>
 </div>
 <?php
@@ -133,6 +135,12 @@
             break;
         case 'specialPrint':
             include 'module/setting/score/specialPrint.php';
+            break;
+        case 'timeTable':
+            include 'content/timeTable/index.php';
+            break;
+        case 'scoreTracing':
+            include 'content/setting/index.php';
             break;
     }
 ?>

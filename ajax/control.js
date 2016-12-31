@@ -49,20 +49,6 @@ function deleteStudentDoc(id){
 	ajaxLoadFrw('post', URL, data, '');
 	}
 }
-
-function loadContent(content, folder, id){
-	var URL = "content/" + folder + "/" + content + ".php?id=" + id  ;
-	var data = null;
-	ajaxLoadFrw('get', URL, data, "content");
-	document.getElementById('content').innerHTML = "Loading....";
-	document.getElementById('masterPagination').style.display = "none";
-        document.getElementById('statistic').style.display = "none";
-	alert(url);
-	//Set timeout
-	var t = 60000;
-	timeoutF = setTimeout("ajaxTimeoutFrw()", t);
-}
-
 function hideData(){
     document.getElementById('statistic').style.display = "none";
     alert('1');
@@ -671,6 +657,11 @@ function studyResultSave(id, savingAlert){
     document.getElementById(savingAlertText).innerHTML = "Processing...";
     ajaxLoadFrw('post', URL, data, 'subcontent');
 }
-function acceptScore(){
-    document.getElementById("score").disabled = false;
+//----------------------------------------------timeTable-------------------------------------------------------------
+function timeTableSelectProgram(){
+    var p_id = document.getElementById('p_id').value;
+    var URL = "content/timeTable/action/timeTableSelectProgram.php?dummy=" + Math.random();
+    var data = "&p_id=" + p_id;
+    document.getElementById('selectAlert').innerHTML = "Loading...";
+    ajaxLoadFrw('post', URL, data, 'content');
 }
