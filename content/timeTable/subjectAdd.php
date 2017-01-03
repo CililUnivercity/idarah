@@ -1,6 +1,17 @@
 <?php
     include '../../connect.php';
 ?>
+<style>
+    #listbox{
+        position: absolute;
+        width: 250px;
+        border: solid 1px black;
+        background-color: #eeeeee;
+        display: none;
+        alignment-adjust: right;
+        text-align: left;
+    }
+</style>
 <div class="pull-left">
     <h4>Tambah mata kuliah</h4>
 </div>
@@ -13,7 +24,7 @@
 <br>
 <hr>
 
-<form class="form-horizontal">
+<form class="form-horizontal" name="timeTable" id="timeTable">
     
     <div class="form-group">
         <label class="col-lg-4 control-label">Program :</label>
@@ -44,6 +55,17 @@
         </div>
     </div>
     
+    <div class="form-group">
+        <label class="col-lg-4 control-label">Pensyarah : </label>
+        <div class="col-lg-3">
+            <input type="text" name="t_id" id="t_id" class="form-control" onkeyup="teachertAutoComp()">
+            <div id="listbox"></div>
+        </div>
+    </div>
+    
+    <input type="hidden" name="teacher" id="teacher" value=""> 
+    
 </form>
+<div id="msg"></div>
 
 

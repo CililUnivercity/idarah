@@ -1,7 +1,19 @@
+<style>
+    #listbox{
+        position: absolute;
+        width: 300px;
+        border: solid 1px black;
+        background-color: #eeeeee;
+        display: none;
+        alignment-adjust: right;
+        text-align: left;
+    }
+</style>
 <h4>&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-usd"></span> BAYAR UJIAN</h4>
-<form class="form-horizontal" id="examSearchForm" name="examSearchForm">
+<form class="form-horizontal" id="examSearchForm" name="studentSearchForm" id="studentSearchForm">
     <div class="col-lg-3">
-        <input type="text" class="form-control input-sm" name="q" id="q" autofocus onkeypress="return isPressEnterExam()">
+        <input type="text" class="form-control input-sm" name="q" id="q" autofocus onkeypress="return isPressEnterExam()" onkeyup="studentSearchAutoComp()">
+        <div id="listbox"></div>
     </div>
 </form>
 <button type="submit" class="btn btn-success btn-sm" onclick="searchExam()" id="searchBox">SEARCH</button>

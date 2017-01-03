@@ -1,7 +1,19 @@
+<style>
+    #listbox{
+        position: absolute;
+        width: 300px;
+        border: solid 1px black;
+        background-color: #eeeeee;
+        display: none;
+        alignment-adjust: right;
+        text-align: left;
+    }
+</style>
 <h4>&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-usd"></span> BAYAR YURAN</h4>
-<form class="form-horizontal" id="yuranSearchForm" name="yuranSearchForm">
+<form class="form-horizontal" id="yuranSearchForm" name="studentSearchForm" id="studentSearchForm">
     <div class="col-lg-3">
-        <input type="text" class="form-control input-sm" id="q" autofocus onkeypress="return isPressEnterYuran()">
+        <input type="text" class="form-control input-sm" id="q" autofocus onkeypress="return isPressEnterYuran()" onkeyup="studentSearchAutoComp()">
+        <div id="listbox"></div>
     </div>
 </form>
 <button type="submit" class="btn btn-success btn-sm" onclick="searchYuran()" id="searchBox">SEARCH</button>

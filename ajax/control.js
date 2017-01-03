@@ -248,8 +248,9 @@ function searchYuran(){
     if(document.getElementById('q').value==""){
         document.getElementById('q').focus();
     }else{
-	var data = getFrmData("yuranSearchForm");
 	var URL = "content/payment/action/yuranSearch.php?dummy=" + Math.random();
+        var q = document.getElementById('q').value;
+        var data = "&q=" + q;
 	document.getElementById('content').innerHTML = "Sedang cari ! tunnggu sekejab...";
 	ajaxLoadFrw('post', URL, data, 'content');
         document.getElementById('masterPagination').style.display = "none";
@@ -563,7 +564,7 @@ function mustawaStudentSearch(){
         document.getElementById('q').focus();
     }else{
         var URL = "content/payment/mustawa/action/mustawaStudentSearch.php?dummy=" + Math.random();
-        var data = getFrmData('mustawaStudentSearchForm');
+        var data = getFrmData('studentSearchForm');
         document.getElementById('mustawaList').innerHTML = "Sedang cari...";
         ajaxLoadFrw('post', URL, data, 'mustawaList');
     }
@@ -657,6 +658,15 @@ function studyResultSave(id, savingAlert){
     document.getElementById(savingAlertText).innerHTML = "Processing...";
     ajaxLoadFrw('post', URL, data, 'subcontent');
 }
+function studentSearchAutoComp(){
+    var URL = "content/payment/mustawa/action/mustawa_autocomplete.php?dummy= " + Math.random();
+    var data = getFrmData("studentSearchForm");
+    ajaxLoadFrw('post', URL, data, 'content');  
+}
+function mustawa_readText(id){
+    document.getElementById('q').value = id;
+    document.getElementById('listbox').style.display = 'none';
+}
 //----------------------------------------------timeTable-------------------------------------------------------------
 function timeTableSelectProgram(){
     var p_id = document.getElementById('p_id').value;
@@ -665,3 +675,14 @@ function timeTableSelectProgram(){
     document.getElementById('selectAlert').innerHTML = "Loading...";
     ajaxLoadFrw('post', URL, data, 'content');
 }
+function teachertAutoComp(){
+    var URL = "content/timeTable/action/teacher_autocomplete.php?dummy= " + Math.random();
+    var data = getFrmData("timeTable");
+    ajaxLoadFrw('post', URL, data, 'msg');  
+}
+function readText(el, id){
+    document.getElementById('t_id').value = el.innerHTML;
+    document.getElementById('listbox').style.display = 'none';
+    document.getElementById('teacher').value = id;
+}
+

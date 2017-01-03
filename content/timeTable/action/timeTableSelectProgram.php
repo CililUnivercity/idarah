@@ -11,7 +11,7 @@
     }
     
     
-    $sql = mysqli_query($con, "SELECT * FROM register WHERE p_id='$p_idText'");
+    $sql = mysqli_query($con, "SELECT re.*,y.* FROM register re INNER JOIN year y ON re.y_id=y.y_id WHERE re.p_id='$p_idText' ORDER BY re.re_id DESC");
     $num = mysqli_num_rows($sql);
 
     $response = "";
@@ -23,17 +23,18 @@ $javascript = <<<JS
 JS;
 $response = $javascript;
 echo $response;
-$i=0;
 while($result = mysqli_fetch_array($sql)){
+    $textValue = $result['year'];
+    $valueId = $result['re_id'];
+    $term = $result['term_id'];
 $javascript = <<<JS
         var opt = document.createElement('option');
-        opt.value = "id";
-        opt.text = "Test";
+        opt.value = "{$valueId}";
+        opt.text = "{$term}/{$textValue}";
         document.getElementById('register').add(opt);
 JS;
     $response .= $javascript;
     echo $response;
-    $i++;
     }
             echo <<<JS
             document.getElementById('selectAlert').innerHTML = "";

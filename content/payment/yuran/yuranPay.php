@@ -172,13 +172,28 @@ if($penaltyRow[0]>0){
     }
 
 ?>
-
-<form class="form-horizontal" id="yuranSearchForm" name="yuranSearchForm">
-    <div class="col-lg-3">
-        <input type="text" class="form-control input-sm" id="q" autofocus onkeypress="return isPressEnterYuran()">
-    </div>
-</form>
-<button type="submit" class="btn btn-success btn-sm" onclick="searchYuran()" id="searchBox">SEARCH</button>
+<style>
+    #listbox{
+        position: absolute;
+        width: 300px;
+        border: solid 1px black;
+        background-color: #eeeeee;
+        display: none;
+        alignment-adjust: right;
+        text-align: left;
+    }
+</style>
+<div class="col-lg-4">
+    <form class="form-horizontal" id="mustawaSearchForm" name="studentSearchForm" id="studentSearchForm">
+    <div class="input-group">
+        <input type="text" class="form-control input-sm" id="q" name="q" autofocus onkeypress="return isPressEnterYuran()" onkeyup="studentSearchAutoComp()">
+        <span class="input-group-btn">
+            <a class="btn btn-success btn-sm" type="button" onclick="searchYuran()"><span class="glyphicon glyphicon-search"></span> CARI</a>
+        </span>
+    </div><!-- /input-group -->
+    <div id="listbox"></div>
+  </form>
+</div>
 <br><br>
 
 <table class="table table-bordered">

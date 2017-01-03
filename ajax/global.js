@@ -19,6 +19,17 @@ function load(path, id){
     var t = 60000;
     timeoutF = setTimeout("ajaxTimeoutFrw()", t);
 }
+//---------------------------------------Auto complete---------------------------------------------------------------
+function msOverList(el){
+    el.style.backgroundColor = '#ffffcc';
+    el.style.cursor = 'pointer';
+}
+function msOutList(el){
+    el.style.backgroundColor = '#eeeeee';
+}
+function hideList(){
+    document.getElementById('listbox').style.display = 'none';
+}
 
 
 

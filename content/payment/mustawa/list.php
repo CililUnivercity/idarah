@@ -1,12 +1,24 @@
+<style>
+    #listbox{
+        position: absolute;
+        width: 300px;
+        border: solid 1px black;
+        background-color: #eeeeee;
+        display: none;
+        alignment-adjust: right;
+        text-align: left;
+    }
+</style>
 <h4><span class="glyphicon glyphicon-usd"></span> BAYAR MUSTAWA</h4>
 <div class="col-lg-4">
-    <form class="form-horizontal" id="mustawaSearchForm" name="mustawaStudentSearchForm">
+    <form class="form-horizontal" id="mustawaSearchForm" name="studentSearchForm" id="studentSearchForm">
     <div class="input-group">
-        <input type="text" class="form-control input-sm" id="q" name="q" onkeypress="return isPressEnterMustawaStudent()">
+        <input type="text" class="form-control input-sm" id="q" name="q" onkeypress="return isPressEnterMustawaStudent()" onkeyup="studentSearchAutoComp()">
         <span class="input-group-btn">
             <a class="btn btn-success btn-sm" type="button" onclick="mustawaStudentSearch()"><span class="glyphicon glyphicon-search"></span> CARI</a>
         </span>
     </div><!-- /input-group -->
+    <div id="listbox"></div>
   </form>
 </div>
 
