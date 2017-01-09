@@ -76,7 +76,7 @@
                 ?>   
                         <div class="col-lg-3">
                             <a href="module/admission/capture/edit.php?st_id=<?= $st_id ?>" target="_blank"><span class="glyphicon glyphicon-edit"></span> Ubah</a>
-                            <img src="module/admission/capture/images/<?php echo $imgId ?>.jpg" class="img-thumbnail">
+                            <img src="content/student/capture/images/<?php echo $imgId ?>.jpg" class="img-thumbnail">
                         </div>
                 <?php
                     }

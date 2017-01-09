@@ -2,12 +2,17 @@
 
     $st_id = $_GET['id'];
     $gender = $_GET['gender'];
+    
+    //Admision yaer setting
+    $admissionRegister = mysqli_query($con, "SELECT * FROM admissionRegister WHERE ar_status='1'");
+    $admissionRegisterRow = mysqli_fetch_array($admissionRegister);
+    $cyear1 = $admissionRegisterRow['ar_year'];
         
         //Class process 
         
         //If gender is male (A B C D E F)
         if($gender == 'Lelaki'){
-            $sqlMaleA = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='A'");
+            $sqlMaleA = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='A' AND pre_register_year='$cyear1'");
             $rsSqlMaleA = mysqli_fetch_array($sqlMaleA);
             $maleA = $rsSqlMaleA['max'];
             
@@ -18,7 +23,7 @@
                 $testClassSet = 'A';
                 $testNumberSet = $maleA+1;
             }else{
-                $sqlMaleB = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='B'");
+                $sqlMaleB = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='B' AND pre_register_year='$cyear1'");
                 $rsSqlMaleB = mysqli_fetch_array($sqlMaleB);
                 $maleB = $rsSqlMaleB['max'];
                 if($maleB == ''){
@@ -28,7 +33,7 @@
                     $testClassSet = 'B';
                     $testNumberSet = $maleB+1;
                 }else{
-                    $sqlMaleC = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='C'");
+                    $sqlMaleC = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='C' AND pre_register_year='$cyear1'");
                     $rsSqlMaleC = mysqli_fetch_array($sqlMaleC);
                     $maleC = $rsSqlMaleC['max'];
                     if($maleC == ''){
@@ -38,7 +43,7 @@
                         $testClassSet = 'C';
                         $testNumberSet = $maleC+1;
                     }else{
-                        $sqlMaleD = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='D'");
+                        $sqlMaleD = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='D' AND pre_register_year='$cyear1'");
                         $rsSqlMaleD = mysqli_fetch_array($sqlMaleD);
                         $maleD = $rsSqlMaleD['max'];
                         if($maleD == ''){
@@ -48,7 +53,7 @@
                                 $testClassSet = 'D';
                                 $testNumberSet = $maleD+1;
                         }else{
-                            $sqlMaleE = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='E'");
+                            $sqlMaleE = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='E' AND pre_register_year='$cyear1'");
                             $rsSqlMaleE = mysqli_fetch_array($sqlMaleE);
                             $maleE = $rsSqlMaleE['max'];
                             if($maleE == ''){
@@ -58,7 +63,7 @@
                                     $testClassSet = 'E';
                                     $testNumberSet = $maleE+1;
                             }else{
-                                $sqlMaleF = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='F'");
+                                $sqlMaleF = mysqli_query($con, "SELECT MAX(testNumber) as max,testClass FROM pretest WHERE testClass='F' AND pre_register_year='$cyear1'");
                                 $rsSqlMaleF = mysqli_fetch_array($sqlMaleF);
                                 $maleF = $rsSqlMaleF['max'];
                                 if($maleF == ''){
@@ -81,7 +86,7 @@
                 }
              }
              
-            $odrMax = mysqli_query($con, "SELECT MAX(odrNumber) AS odrNumber FROM pretest");
+            $odrMax = mysqli_query($con, "SELECT MAX(odrNumber) AS odrNumber FROM pretest WHERE pre_register_year='$cyear1'");
             $rsOdr = mysqli_fetch_array($odrMax);
             $maxOdr = $rsOdr['odrNumber'];
             $odrNumber = $maxOdr+1;
@@ -96,7 +101,7 @@
         //break;
         //If gender is female    
         }else{
-            $sqlFemaleG = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='G'");
+            $sqlFemaleG = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='G' AND pre_register_year='$cyear1'");
             $rsSqlFemaleG = mysqli_fetch_array($sqlFemaleG);
             $femaleG = $rsSqlFemaleG['max'];
             
@@ -109,7 +114,7 @@
                     $testNumberSet = $femaleG+1;
             // Class  H  
             }else{
-            $sqlFemaleH = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='H'");
+            $sqlFemaleH = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='H' AND pre_register_year='$cyear1'");
             $rsSqlFemaleH = mysqli_fetch_array($sqlFemaleH);
             $femaleH = $rsSqlFemaleH['max'];
                 if($femaleH == ''){
@@ -120,7 +125,7 @@
                         $testNumberSet = $femaleH+1;
                 //Class I
                 }else{
-                    $sqlFemaleI = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='I'");
+                    $sqlFemaleI = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='I' AND pre_register_year='$cyear1'");
                     $rsSqlFemaleI = mysqli_fetch_array($sqlFemaleI);
                     $femaleI = $rsSqlFemaleI['max'];
                     if($femaleI == ''){
@@ -131,7 +136,7 @@
                         $testNumberSet = $femaleI+1;
                     //Class I
                     }else{
-                        $sqlFemaleJ = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='J'");
+                        $sqlFemaleJ = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='J' AND pre_register_year='$cyear1'");
                         $rsSqlFemaleJ = mysqli_fetch_array($sqlFemaleJ);
                         $femaleJ = $rsSqlFemaleJ['max'];
                         if($femaleJ == ''){
@@ -142,7 +147,7 @@
                             $testNumberSet = $femaleJ+1;
                         //Class K
                         }else{
-                            $sqlFemaleK = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='K'");
+                            $sqlFemaleK = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='K' AND pre_register_year='$cyear1'");
                             $rsSqlFemaleK = mysqli_fetch_array($sqlFemaleK);
                             $femaleK = $rsSqlFemaleK['max'];
                             if($femaleK == ''){
@@ -153,7 +158,7 @@
                                 $testNumberSet = $femaleK+1;
                             //Class K
                             }else{
-                                $sqlFemaleL = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='L'");
+                                $sqlFemaleL = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='L' AND pre_register_year='$cyear1'");
                                 $rsSqlFemaleL = mysqli_fetch_array($sqlFemaleL);
                                 $femaleL = $rsSqlFemaleL['max'];
                                 if($femaleL == ''){
@@ -164,7 +169,7 @@
                                     $testNumberSet = $femaleL+1;
                                 //Class M
                                 }else{
-                                    $sqlFemaleM = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='M'");
+                                    $sqlFemaleM = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='M' AND pre_register_year='$cyear1'");
                                     $rsSqlFemaleM = mysqli_fetch_array($sqlFemaleM);
                                     $femaleM = $rsSqlFemaleM['max'];
                                     if($femaleM == ''){
@@ -175,7 +180,7 @@
                                         $testNumberSet = $femaleM+1;
                                     //Class N
                                     }else{
-                                        $sqlFemaleN = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='N'");
+                                        $sqlFemaleN = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='N' AND pre_register_year='$cyear1'");
                                         $rsSqlFemaleN = mysqli_fetch_array($sqlFemaleN);
                                         $femaleN = $rsSqlFemaleN['max'];
                                         if($femaleN == ''){
@@ -186,7 +191,7 @@
                                             $testNumberSet = $femaleN+1;
                                         //Class O
                                         }else{
-                                            $sqlFemaleO = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='O'");
+                                            $sqlFemaleO = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='O' AND pre_register_year='$cyear1'");
                                             $rsSqlFemaleO = mysqli_fetch_array($sqlFemaleO);
                                             $femaleO = $rsSqlFemaleO['max'];
                                             if($femaleO == ''){
@@ -197,7 +202,7 @@
                                                 $testNumberSet = $femaleO+1;
                                             //Class P
                                             }else{
-                                                $sqlFemaleP = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='P'");
+                                                $sqlFemaleP = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='P' AND pre_register_year='$cyear1'");
                                                 $rsSqlFemaleP = mysqli_fetch_array($sqlFemaleP);
                                                 $femaleP = $rsSqlFemaleP['max'];
                                                 if($femaleP == ''){
@@ -208,7 +213,7 @@
                                                     $testNumberSet = $femaleP+1;
                                                 //Class Q
                                                 }else{
-                                                    $sqlFemaleQ = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='Q'");
+                                                    $sqlFemaleQ = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='Q' AND pre_register_year='$cyear1'");
                                                     $rsSqlFemaleQ = mysqli_fetch_array($sqlFemaleQ);
                                                     $femaleQ = $rsSqlFemaleQ['max'];
                                                     if($femaleQ == ''){
@@ -219,7 +224,7 @@
                                                         $testNumberSet = $femaleQ+1;
                                                     //Class R
                                                     }else{
-                                                        $sqlFemaleR = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='R'");
+                                                        $sqlFemaleR = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='R' AND pre_register_year='$cyear1'");
                                                         $rsSqlFemaleR = mysqli_fetch_array($sqlFemaleR);
                                                         $femaleR = $rsSqlFemaleR['max'];
                                                         if($femaleR == ''){
@@ -230,7 +235,7 @@
                                                             $testNumberSet = $femaleR+1;
                                                         //Class S
                                                         }else{
-                                                            $sqlFemaleS = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='S'");
+                                                            $sqlFemaleS = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='S' AND pre_register_year='$cyear1'");
                                                             $rsSqlFemaleS = mysqli_fetch_array($sqlFemaleS);
                                                             $femaleS = $rsSqlFemaleS['max'];
                                                             if($femaleS == ''){
@@ -241,7 +246,7 @@
                                                                 $testNumberSet = $femaleS+1;
                                                             //Class T
                                                             }else{
-                                                                $sqlFemaleT = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='T'");
+                                                                $sqlFemaleT = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='T' AND pre_register_year='$cyear1'");
                                                                 $rsSqlFemaleT = mysqli_fetch_array($sqlFemaleT);
                                                                 $femaleT = $rsSqlFemaleT['max'];
                                                                 if($femaleT == ''){
@@ -252,7 +257,7 @@
                                                                     $testNumberSet = $femaleT+1;
                                                                 //Class U
                                                                 }else{
-                                                                    $sqlFemaleU = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='U'");
+                                                                    $sqlFemaleU = mysqli_query($con, "SELECT MAX(testNumber) AS max,testClass FROM pretest WHERE testClass='U' AND pre_register_year='$cyear1'");
                                                                     $rsSqlFemaleU = mysqli_fetch_array($sqlFemaleU);
                                                                     $femaleU = $rsSqlFemaleU['max'];
                                                                     if($femaleU == ''){
@@ -283,7 +288,7 @@
                     }
                 }
             }
-            $odrMax = mysqli_query($con, "SELECT MAX(odrNumber) AS odrNumber FROM pretest");
+            $odrMax = mysqli_query($con, "SELECT MAX(odrNumber) AS odrNumber FROM pretest WHERE pre_register_year='$cyear1'");
             $rsOdr = mysqli_fetch_array($odrMax);
             $maxOdr = $rsOdr['odrNumber'];
             $odrNumber = $maxOdr+1;

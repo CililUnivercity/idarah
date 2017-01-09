@@ -7,16 +7,16 @@
     $admissionRegisterRow = mysqli_fetch_array($admissionRegister);
     $cyear1 = $admissionRegisterRow['ar_year'];
     
-    $sqlRegisBefore = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='0'");
+    $sqlRegisBefore = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='0' AND p.pre_register_year='$cyear1'");
     $numRegisBefore = mysqli_num_rows($sqlRegisBefore);
     
-    $sqlRegisAfter = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='1'");
+    $sqlRegisAfter = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='1' AND p.pre_register_year='$cyear1'");
     $numRegisAfter = mysqli_num_rows($sqlRegisAfter);
     
-    $sqlRegisTrans = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='1' and p.type='1'");
+    $sqlRegisTrans = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='1' and p.type='1' AND p.pre_register_year='$cyear1'");
     $numRegisTrans = mysqli_num_rows($sqlRegisTrans);
     
-    $sqlRegisMuqaddimah = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='1' and s.muqaddimah='1'");
+    $sqlRegisMuqaddimah = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.payStatus='1' and s.muqaddimah='1' AND p.pre_register_year='$cyear1'");
     $numRegisMuqaddimah = mysqli_num_rows($sqlRegisMuqaddimah);
 ?>
 

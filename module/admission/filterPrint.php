@@ -22,7 +22,7 @@
         $admissionRegisterRow = mysqli_fetch_array($admissionRegister);
         $cyear1 = $admissionRegisterRow['ar_year'];
         
-        $pretestMen = mysqli_query($con, "SELECT p.*,s.* FROM pretest p JOIN students s ON p.st_id=s.st_id WHERE p.testClass='$class' AND p.payStatus='1' ORDER BY p.odrNumber");
+        $pretestMen = mysqli_query($con, "SELECT p.*,s.* FROM pretest p JOIN students s ON p.st_id=s.st_id WHERE p.testClass='$class' AND p.payStatus='1' AND p.pre_register_year='$cyear1' ORDER BY p.odrNumber");
         $i = 1;
         while($rowPretestMen = mysqli_fetch_array($pretestMen)){
             $fname = str_replace("\'", "&#39;", $rowPretestMen["firstname_jawi"]);

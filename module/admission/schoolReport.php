@@ -8,8 +8,12 @@
     /*
     $admYear = mysqli_query($con, "SELECT * FROM admissionregister WHERE ar_status='1'");
     */
-
-    $allStd = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id GROUP BY sanawi_graduate");
+    
+    $admissionRegister = mysqli_query($con, "SELECT * FROM admissionRegister WHERE ar_status='1'");
+    $admissionRegisterRow = mysqli_fetch_array($admissionRegister);
+    $cyear1 = $admissionRegisterRow['ar_year'];
+    
+    $allStd = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id AND p.pre_register_year='$cyear1' GROUP BY sanawi_graduate");
 ?>
 
 <table class="table table-striped table-hover">
@@ -112,7 +116,7 @@
                                                         <h4>
                                                         <hr>
                                                     <?php
-                                                        $zM++;
+                                                        //$zM++;
                                                         }
                                                     ?> 
                                                         

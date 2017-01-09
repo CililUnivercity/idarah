@@ -675,6 +675,7 @@ function timeTableSelectProgram(){
     document.getElementById('selectAlert').innerHTML = "Loading...";
     ajaxLoadFrw('post', URL, data, 'content');
 }
+//find teacher
 function teachertAutoComp(){
     var URL = "content/timeTable/action/teacher_autocomplete.php?dummy= " + Math.random();
     var data = getFrmData("timeTable");
@@ -684,5 +685,26 @@ function readText(el, id){
     document.getElementById('t_id').value = el.innerHTML;
     document.getElementById('listbox').style.display = 'none';
     document.getElementById('teacher').value = id;
+}
+//find subject
+function subjectAutoComp(){
+    var subject = document.getElementById('subject').value;
+    var URL = "content/timeTable/action/subject_autocomplete.php?dummy= " + Math.random();
+    var data = "&subject=" + subject;
+    //alert(data);
+    ajaxLoadFrw('post', URL, data, 'msg');
+}
+function subjectReadText(el, id){
+    document.getElementById('subject').value = el.innerHTML;
+    document.getElementById('subjectList').style.display = 'none';
+    document.getElementById('s_id').value = id;
+}
+function facultySelect(){
+    var ft_id = document.getElementById('ft_id').value;
+    var URL = "content/timeTable/action/facultySelect.php?dummy=" + Math.random();
+    var data = "&ft_id=" + ft_id;
+    //alert(data);
+    document.getElementById('departmentSelectAlert').innerHTML = "Loading...";
+    ajaxLoadFrw('post', URL, data, 'content');
 }
 

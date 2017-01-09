@@ -5,7 +5,7 @@ session_start();
 $st_id = $_GET['studentid'];
 include 'connection.php';
 $name = date('YmdHis');
-$newname="images/".$name.".jpg";
+$newname="../../../content/student/capture/images/".$name.".jpg";
 $file = file_put_contents( $newname, file_get_contents('php://input') );
 if (!$file) {
 	print "Error occured here";

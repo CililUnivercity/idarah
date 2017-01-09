@@ -1,8 +1,13 @@
 
 <h4><span class="glyphicon glyphicon-check"></span> BAYAR MUQADDIMAH CALON TRANSFER</h4>
 <?php
+    //Admision yaer setting
+    $admissionRegister = mysqli_query($con, "SELECT * FROM admissionRegister WHERE ar_status='1'");
+    $admissionRegisterRow = mysqli_fetch_array($admissionRegister);
+    $cyear1 = $admissionRegisterRow['ar_year'];
+
     $pagic = "?page=admissions&&admissionpage=transfermuqaddimah";
-    $sql = "SELECT COUNT(st_id) FROM pretest WHERE payStatus='1' AND type='1'";
+    $sql = "SELECT COUNT(st_id) FROM pretest WHERE payStatus='1' AND type='1' AND pre_register_year='$cyear1'";
     $query = mysqli_query($con, $sql);
     $row = mysqli_fetch_row($query);
     // Here we have the total row count
@@ -30,7 +35,7 @@
     // This sets the range of rows to query for the chosen $pagenum
     $limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
     // This is your query again, it is for grabbing just one page worth of rows by applying $limit
-    $sql = "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE payStatus='1' AND type='1' ORDER BY regNumber $limit";
+    $sql = "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE payStatus='1' AND type='1' AND p.pre_register_year='$cyear1' ORDER BY regNumber $limit";
     $query = mysqli_query($con, $sql);
     // This shows the user what page they are on, and the total number of pages
     $textline1 = "จำนวน(<b>$rows</b>)";
