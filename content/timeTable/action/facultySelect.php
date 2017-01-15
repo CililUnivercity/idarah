@@ -13,6 +13,10 @@ $javascript = <<<JS
             while(el.length>0){
                 el.remove(0);
             }
+                var opt = document.createElement('option');
+                opt.value = "0";
+                opt.text = "";
+                document.getElementById('dp_id').add(opt);
 JS;
 $response = $javascript;
 echo $response;

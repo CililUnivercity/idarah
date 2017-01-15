@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/system/content/timeTable/subjectAdd.php</file>
-            <file>file:/C:/xampp/htdocs/system/content/timeTable/action/timeTableSelectProgram.php</file>
-            <file>file:/C:/xampp/htdocs/system/content/timeTable/action/facultySelect.php</file>
-            <file>file:/C:/xampp/htdocs/system/content/timeTable/action/subject_autocomplete.php</file>
-            <file>file:/C:/xampp/htdocs/system/ajax/global.js</file>
-            <file>file:/C:/xampp/htdocs/system/ajax/control.js</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

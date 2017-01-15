@@ -47,7 +47,7 @@
             <select class="form-control" onchange="timeTableSelectProgram()" name="p_id" id="p_id">
                 <option value="102">--Program--</option>
             <?php
-                $program = mysqli_query($con, "SELECT * FROM program");
+                $program = mysqli_query($con, "SELECT * FROM program ORDER BY p_id DESC");
                 while($program_result = mysqli_fetch_array($program)){
             ?>
                 <option value="<?= $program_result['p_id'] ?>"><?= $program_result['p_name'] ?></option>
@@ -65,7 +65,7 @@
                 <option value="0">--Pilih--</option>
             </select>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-2">
             <div id="selectAlert"></div>
         </div>
     </div>
@@ -115,11 +115,29 @@
         <div id="departmentSelectAlert"></div>
     </div>
     
+    <div class="form-group">
+        <label class="col-lg-4 control-label">Kelas : </label>
+        <div class="col-lg-5">
+            <select name="rs_class" id="rs_class" class="form-control">
+                <option value="0">--------------Pilih------------</option>
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+            </select>
+        </div>
+    </div>
+    
     <input type="hidden" name="teacher" id="teacher" value=""> 
     <input type="hidden" name="s_id" id="s_id" value=""> 
     
     
 </form>
-<div id="msg"></div>
+
+<div align="center">
+    <button class="btn btn-success btn-sm" onclick="subjectRegisterAddSave()"><span class="glyphicon glyphicon-floppy-disk"></span> SIMPAN</button>
+</div>
+
+<div id="msg" align='center'></div>
 
 

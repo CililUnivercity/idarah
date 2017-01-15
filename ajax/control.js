@@ -707,4 +707,15 @@ function facultySelect(){
     document.getElementById('departmentSelectAlert').innerHTML = "Loading...";
     ajaxLoadFrw('post', URL, data, 'content');
 }
-
+function subjectRegisterAddSave(){
+    var URL = "content/timeTable/action/subjectRegisterAddSave.php?dummy=" + Math.random();
+    var data = getFrmData("timeTable");
+    //alert(data);
+    document.getElementById('msg').innerHTML = "Processing...";
+    ajaxLoadFrw('post', URL, data, 'content');
+}
+function classTimetableSearch(){
+    var URL = "content/timeTable/action/classTimetableSearch.php?dummy=" + Math.random();
+    var data = getFrmData("classScheduleSearch");
+    ajaxLoadFrw('post', URL, data, 'msg');
+}
