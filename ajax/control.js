@@ -719,3 +719,17 @@ function classTimetableSearch(){
     var data = getFrmData("classScheduleSearch");
     ajaxLoadFrw('post', URL, data, 'msg');
 }
+function deleteRegisterSubject(rs_id){
+    var URL = "content/timeTable/action/deleteRegisterSubject.php?dummy=" + Math.random();
+    var result = confirm("Anda yakin untuk hapus data ini?");
+    if(result){
+	var data = "&rs_id=" + rs_id;
+        ajaxLoadFrw('post', URL, data, 'content');
+    }
+}
+//----------------------------------------------setting-------------------------------------------------------------
+function classTimetableSearch_setting(){
+    var URL = "content/setting/action/classTimetableSearch.php?dummy=" + Math.random();
+    var data = getFrmData("classScheduleSearch");
+    ajaxLoadFrw('post', URL, data, 'msg');
+}

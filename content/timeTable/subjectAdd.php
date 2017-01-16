@@ -121,9 +121,26 @@
             <select name="rs_class" id="rs_class" class="form-control">
                 <option value="0">--------------Pilih------------</option>
                 <option value="1">1</option>
-                <option value="1">2</option>
-                <option value="1">3</option>
-                <option value="1">4</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-lg-4 control-label">Hissah : </label>
+        <div class="col-lg-5">
+            <select name="rs_session" id="rs_session" class="form-control">
+                <option value="0">--------------Pilih------------</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
             </select>
         </div>
     </div>

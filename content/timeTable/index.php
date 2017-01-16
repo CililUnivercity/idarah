@@ -1,6 +1,3 @@
-<?php
-    //include 'connect.php';
-?>
 <blockquote>
     <div id="content">
         <div class="pull-left">

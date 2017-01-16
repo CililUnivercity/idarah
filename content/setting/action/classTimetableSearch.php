@@ -35,8 +35,8 @@
                         <td align="center">MATA KULIAH</div></td>
                         <td align="center"><div id="subText"><b>مادة</b></div></td>
                         <td align="center"><b>PENSYARAH</b></td>
-                        <td align="center"><b>SKS</b></td>
-                        <td align="center"><b>HAPUS</b></td>
+                        <td align="center"><b>PENGISIAN</b></td>
+                        <td align="center"><b>NATIJAH</b></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,9 +59,7 @@ RS;
                 <td align="right"><div id="subText">{$s_arabName}</div></td>
                 <td align="left">{$teacherName} {$teacherLastname}</td>
                 <td>{$credit}</td>
-                <td align="center">
-                    <a href="#" onclick="deleteRegisterSubject('$rs_id')"><span class='glyphicon glyphicon-remove'></span></a>
-                </td>
+                <td align="center"></td>
             </tr>
 TB;
     $response .= $tbody;

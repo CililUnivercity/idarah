@@ -8,6 +8,7 @@
     $ft_id = $_POST['ft_id'];
     $dp_id = $_POST['dp_id'];
     $rs_class = $_POST['rs_class'];
+    $rs_session = $_POST['rs_session'];
     $rs_lastUpdate = date('Y-m-d');
     
     //get data from register data
@@ -16,8 +17,8 @@
     $rs_term = $registerResult['term_id'];
     $rs_year = $registerResult['year'];
     
-    //echo "alert('$year');";
-    $registerSubjectCheck = mysqli_query($con, "SELECT * FROM registerSubject WHERE s_id='$s_id' AND ft_id='$ft_id' AND dp_id='$dp_id'");
+    //echo "alert('$rs_class');";
+    $registerSubjectCheck = mysqli_query($con, "SELECT * FROM registerSubject WHERE s_id='$s_id' AND ft_id='$ft_id' AND dp_id='$dp_id' AND rs_class='$rs_class'");
     $registerSubjectCheckNum = mysqli_num_rows($registerSubjectCheck);
     
     //echo "alert('$registerSubjectCheckNum');";
@@ -26,9 +27,9 @@
         echo "document.getElementById('msg').innerHTML = '';";
     }else{
         $INSERT = mysqli_query($con, "INSERT INTO registerSubject 
-                          (s_id,t_id,re_id,ft_id,dp_id,rs_class,rs_term,rs_academic_year,rs_lastUpdate)
+                          (s_id,t_id,re_id,ft_id,dp_id,rs_class,rs_term,rs_academic_year,rs_session,rs_lastUpdate)
                           values
-                          ('$s_id','$t_id','$re_id','$ft_id','$dp_id','$rs_class','$rs_term','$rs_year','$rs_lastUpdate')
+                          ('$s_id','$t_id','$re_id','$ft_id','$dp_id','$rs_class','$rs_term','$rs_year','$rs_session','$rs_lastUpdate')
                           ");
         echo "alert('Data berhasil di tambah');";
         echo "document.getElementById('msg').innerHTML = '';";
