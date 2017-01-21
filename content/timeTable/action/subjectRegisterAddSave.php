@@ -18,11 +18,11 @@
     $rs_year = $registerResult['year'];
     
     //echo "alert('$rs_class');";
-    $registerSubjectCheck = mysqli_query($con, "SELECT * FROM registerSubject WHERE s_id='$s_id' AND ft_id='$ft_id' AND dp_id='$dp_id' AND rs_class='$rs_class'");
+    $registerSubjectCheck = mysqli_query($con, "SELECT * FROM registerSubject WHERE s_id='$s_id' AND ft_id='$ft_id' AND dp_id='$dp_id' AND rs_class='$rs_class' AND rs_academic_year='$rs_year'");
     $registerSubjectCheckNum = mysqli_num_rows($registerSubjectCheck);
     
     //echo "alert('$registerSubjectCheckNum');";
-    if($registerSubjectCheckNum > '0'){
+    if($registerSubjectCheckNum > 0){
         echo "alert('Data sudah ada !');";
         echo "document.getElementById('msg').innerHTML = '';";
     }else{

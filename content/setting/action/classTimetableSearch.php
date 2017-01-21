@@ -1,7 +1,7 @@
 <?php
     include '../../../connect.php';
     //header("content-type: text/javascript");
-    
+    //sleep(1);
     $rs_class = $_POST['class'];
     $re_id = $_POST['re_id'];
     $ft_id = $_POST['ft_id'];
@@ -43,6 +43,7 @@
 RS;
     while($registerSubjectResult = mysqli_fetch_array($registerSubject)){
         $rs_id = $registerSubjectResult['rs_id'];
+        $s_id = $registerSubjectResult['s_id'];
         $subjectCode = $registerSubjectResult['s_code'];
         $s_rumiName = ucwords(str_replace("\'", "&#39;", $registerSubjectResult["s_rumiName"]));
         $s_arabName = str_replace("\'", "&#39;", $registerSubjectResult["s_arabName"]);
@@ -51,15 +52,54 @@ RS;
         $credit = str_replace("\'", "&#39;", $registerSubjectResult["s_credit"]);
         $session = $registerSubjectResult['rs_session'];
         
+        //percent of score updateing
+        $scoreUpdate1 = mysqli_query($con, "select s.*,ss.* from students s
+                            INNER JOIN studentsubject ss ON s.st_id=ss.st_id 
+                            WHERE ss_term='$rs_term' AND 
+                            ss_year='$rs_year' AND 
+                            ft_id='$ft_id' AND 
+                            dp_id='$dp_id' AND 
+                            s_id='$s_id' AND
+                            student_id!=''
+                            ");
+        $scoreUpdateCount1 = mysqli_num_rows($scoreUpdate1);
+        
+        $scoreUpdate2 = mysqli_query($con, "select s.*,ss.* from students s
+                            INNER JOIN studentsubject ss ON s.st_id=ss.st_id 
+                            WHERE ss_term='$rs_term' AND 
+                            ss_year='$rs_year' AND 
+                            ft_id='$ft_id' AND 
+                            dp_id='$dp_id' AND 
+                            s_id='$s_id' AND
+                            student_id!='' AND 
+                            ss_score!=''
+                            ");
+        $scoreUpdateCount2 = mysqli_num_rows($scoreUpdate2);
+        
+        if($scoreUpdateCount1 == 0){
+            $scoreUpdateCount1True = 1;
+        }else{
+            $scoreUpdateCount1True = $scoreUpdateCount1;
+        }
+        
+        $percent = (100 * $scoreUpdateCount2)/$scoreUpdateCount1True;
+        $percentValue = number_format($percent);
+        
+        if($percent < 50){
+            $trClass = 'danger';
+        }else{
+            $trClass = 'success';
+        }
+        
         $tbody = <<<TB
-            <tr id="$rs_id">
+            <tr id="$rs_id" class="$trClass">
                 <td align="center">{$session}</td>
                 <td align="center">{$subjectCode}</td>
                 <td>{$s_rumiName}</td>
                 <td align="right"><div id="subText">{$s_arabName}</div></td>
                 <td align="left">{$teacherName} {$teacherLastname}</td>
-                <td>{$credit}</td>
-                <td align="center"></td>
+                <td align="center">{$percentValue} %</td>
+                <td align="center"><a href="#" onclick="studentSubject('$s_id','$ft_id','$dp_id','$rs_term','$rs_year')"><span class="glyphicon glyphicon-edit"></span></a></td>
             </tr>
 TB;
     $response .= $tbody;

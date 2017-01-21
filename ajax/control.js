@@ -731,5 +731,26 @@ function deleteRegisterSubject(rs_id){
 function classTimetableSearch_setting(){
     var URL = "content/setting/action/classTimetableSearch.php?dummy=" + Math.random();
     var data = getFrmData("classScheduleSearch");
+    document.getElementById('msg').innerHTML = "Sedang cari...";
     ajaxLoadFrw('post', URL, data, 'msg');
+}
+function studentSubject(s_id, ft_id, dp_id, rs_term, rs_year){
+    var URL = "content/setting/action/studentSubject.php?dummy=" + Math.random();
+    var data = "&s_id=" + s_id + "&ft_id=" + ft_id + "&dp_id=" + dp_id + "&rs_term=" + rs_term + "&rs_year=" + rs_year;
+    document.getElementById('msg').innerHTML = "Sedang cari...";
+    ajaxLoadFrw('post', URL, data, 'msg');
+}
+function studentSubjectSave(value, ss_id){
+    var URL = "content/setting/action/studentSubjectSave.php?dummy=" + Math.random();
+    var score = value;
+    var alertId = "alert" + ss_id;
+    var data = "&score=" + score + "&ss_id=" + ss_id + "&alertId=" + alertId;
+    //alert(score);
+    if(score == ""){
+        document.getElementById(alertId).innerHTML = "";
+    }else{
+        document.getElementById(alertId).innerHTML = "Processing...";
+    }
+    ajaxLoadFrw('post', URL, data, 'msg');
+    
 }

@@ -11,8 +11,8 @@
     
     <style>
         body {
-            height: 842px;
-            width: 595px;
+            height: auto;
+            width: auto;
             /* to centre page on screen*/
             margin-left: auto;
             margin-right: auto;
@@ -143,8 +143,9 @@
                     </tr>
                 </table>
 	</div>
-	<div align="center">
+    </body>
+    <div align="center">
             <button type="button" class="btn btn-success" onclick="printDiv('printableArea')">Print <span class="glyphicon glyphicon-print"></span></button>
 	</div>
-    </body>
 </html>
+
