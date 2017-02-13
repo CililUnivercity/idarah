@@ -11,8 +11,8 @@
     
     <style>
         body {
-            height: auto;
-            width: auto;
+            height: 842px;
+            width: 595px;
             /* to centre page on screen*/
             margin-left: auto;
             margin-right: auto;
@@ -135,8 +135,8 @@
                     </tr>
                 </table>
                 <table width="594">
-                    <tr>
-                        <td height="72" align="right">ผู้รับเงิน/Cashier</td>  
+                    <tr height="80">
+                        <td align="right">ผู้รับเงิน/Cashier</td>  
                     </tr>
                     <tr>
                         <td width="432"></td>

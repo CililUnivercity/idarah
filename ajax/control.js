@@ -717,6 +717,7 @@ function subjectRegisterAddSave(){
 function classTimetableSearch(){
     var URL = "content/timeTable/action/classTimetableSearch.php?dummy=" + Math.random();
     var data = getFrmData("classScheduleSearch");
+    document.getElementById('msg').innerHTML = "Processing...";
     ajaxLoadFrw('post', URL, data, 'msg');
 }
 function deleteRegisterSubject(rs_id){
@@ -752,5 +753,4 @@ function studentSubjectSave(value, ss_id){
         document.getElementById(alertId).innerHTML = "Processing...";
     }
     ajaxLoadFrw('post', URL, data, 'msg');
-    
 }

@@ -7,6 +7,20 @@
     $ft_id = $_POST['ft_id'];
     $dp_id = $_POST['dp_id'];
     
+    $faculty = mysqli_query($con, "SELECT * FROM fakultys WHERE ft_id='$ft_id'");
+    $ftResult = mysqli_fetch_array($faculty);
+    $ftName = $ftResult['ft_name'];
+    
+    $department = mysqli_query($con, "SELECT * FROM departments WHERE dp_id='$dp_id'");
+    $dpResult = mysqli_fetch_array($department);
+    $dpName = $dpResult['dp_name'];
+    
+    if($dp_id==0){
+        $departmentRs = "";
+    }else{
+        $departmentRs = " , <b>Jurusan :</b>"." ". $dpName;
+    }
+    
     //get data from register data
     $register = mysqli_query($con, "SELECT r.*,y.* FROM register r INNER JOIN year y ON r.y_id=y.y_id WHERE re_id='$re_id'");
     $registerResult = mysqli_fetch_array($register);
@@ -27,19 +41,27 @@
                                            ");
     
     $response = <<<RS
-            <table class="table table-striped table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <td align="center"><b>HISAH</b></td>
-                        <td align="center"><b>KOD</b></td>
-                        <td align="center">MATA KULIAH</div></td>
-                        <td align="center"><div id="subText"><b>مادة</b></div></td>
-                        <td align="center"><b>PENSYARAH</b></td>
-                        <td align="center"><b>PENGISIAN</b></td>
-                        <td align="center"><b>NATIJAH</b></td>
-                    </tr>
-                </thead>
-                <tbody>
+            <button class="btn btn-success btn-sm" onclick="printContent('div1')"><span class="glyphicon glyphicon-print"></span> PRINT</button>
+            <br>
+            <div id="div1">
+            
+                <div class="pull-left">
+                    <b>Kelas :</b> $rs_class , <b>Semester/Tahun :</b> $rs_term/$rs_year  <b>Fakulti :</b> $ftName  $departmentRs
+                </div>
+            
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <td align="center"><b>HISAH</b></td>
+                            <td align="center"><b>KOD</b></td>
+                            <td align="center">MATA KULIAH</div></td>
+                            <td align="center"><div id="subText"><b>مادة</b></div></td>
+                            <td align="center"><b>PENSYARAH</b></td>
+                            <td align="center"><b>PENGISIAN</b></td>
+                            <td align="center"><b>NATIJAH</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
 RS;
     while($registerSubjectResult = mysqli_fetch_array($registerSubject)){
         $rs_id = $registerSubjectResult['rs_id'];
@@ -104,7 +126,7 @@ RS;
 TB;
     $response .= $tbody;
     }
-    $response .= "</tbody></table>";
+    $response .= "</tbody></table></div>";
     echo $response;
 ?>
 

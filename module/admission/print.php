@@ -153,7 +153,7 @@
                     <b><hr class="new"></b>
                     
                     <div class="pull-left">
-                        <img src="capture/images/<?= $imgId ?>.jpg" class="img-rounded" width="120" height="140px">
+                        <img src="../../content/student/capture/images/<?= $imgId ?>.jpg" class="img-rounded" width="120" height="140px">
                     </div>
                     
                     <div id="main">
@@ -163,7 +163,7 @@
                             </b>
                         </p>
                         <p class="text-center">
-                            تاهون اکاديميک 2016
+                            تاهون اکاديميک 2017
                         </p>
                     </div>
 

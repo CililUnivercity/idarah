@@ -31,7 +31,7 @@
                         $term = $_POST['term'][$i2];
                         $year = $_POST['year'][$i2];
                        
-                        $sql = mysqli_query($con, "INSERT INTO studentSubject
+                        $sql = mysqli_query($con, "INSERT INTO studentsubject
                                             (s_id,st_id,t_id,ss_term,ss_year) 
                                             Value
                                             ('$subject','$st_idA','$teacher','$term','$year');

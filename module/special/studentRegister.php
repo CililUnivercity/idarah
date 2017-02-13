@@ -52,7 +52,7 @@
     }
     
     $sql = mysqli_query($con, "SELECT s.*,ss.* FROM students s 
-                        INNER JOIN studentSubject ss ON s.st_id=ss.st_id 
+                        INNER JOIN studentsubject ss ON s.st_id=ss.st_id 
                         WHERE s.ft_id='$faculty' and s.dp_id='$department' and ss.ss_term='$term' and ss.ss_year='$year' ");
     $get = mysqli_fetch_array($sql);
     
@@ -90,7 +90,7 @@
                     }
                     $iRss = 0;   
                     $registerSubject = mysqli_query($con, "SELECT * FROM registerSubject
-                                                           WHERE rs_class='$classFor' and rs_term='$term' and ft_id='$faculty' and dp_id='$department'
+                                                           WHERE rs_class='$classFor' and rs_term='$term' and ft_id='$faculty' and dp_id='$department' and rs_academic_year='$year'
                                                            ");
                     while($rowRegisterSubject = mysqli_fetch_array($registerSubject)){
                         $subject = $rowRegisterSubject['s_id'];

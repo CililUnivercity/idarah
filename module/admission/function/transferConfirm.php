@@ -2,8 +2,13 @@
 
     $st_id = $_GET['st_id'];
     $gender = $_GET['gender'];
+    
+    //Admision yaer setting
+    $admissionRegister = mysqli_query($con, "SELECT * FROM admissionRegister WHERE ar_status='1'");
+    $admissionRegisterRow = mysqli_fetch_array($admissionRegister);
+    $cyear1 = $admissionRegisterRow['ar_year'];
         
-    $odrMax = mysqli_query($con, "SELECT MAX(odrNumber) AS odrNumber FROM pretest");
+    $odrMax = mysqli_query($con, "SELECT MAX(odrNumber) AS odrNumber FROM pretest WHERE pre_register_year='$cyear1'");
     $rsOdr = mysqli_fetch_array($odrMax);
     $maxOdr = $rsOdr['odrNumber'];
     $odrNumber = $maxOdr+1;
