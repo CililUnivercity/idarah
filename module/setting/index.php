@@ -31,6 +31,9 @@
         case 'teacher':
             include 'module/setting/teacher/list.php';
             break;
+        case 'teacherPrint':
+            include 'module/setting/teacher/teacherPrint.php';
+            break;
         case 'teacherAdd':
             include 'module/setting/teacher/add.php';
             break;

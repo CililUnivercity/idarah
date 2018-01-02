@@ -40,6 +40,7 @@
     <script type="text/javascript" src="ajax/framework.js"></script>
     <script type="text/javascript" src="ajax/control.js"></script>
     <script type="text/javascript" src="ajax/global.js"></script>
+    <script type="text/javascript" src="ajax/private.js"></script>
     <style type="text/css">
         .img
             { background:#ffffff;
@@ -133,6 +134,15 @@
                             case 'mustawa':
                                 include 'content/mustawa/index.php';
                                 break;
+                            case 'dorForAmir':
+                                include 'module/dorForAmir/index.php';
+                                break;
+                            case 'studentCard':
+                                include 'content/card/index.php';
+                                break;
+                            case 'dur':
+                                include 'module/dur/main.php';
+                                break;
                         }
             ?>
          
@@ -177,6 +187,14 @@
 		]
 	});
 	</script>
+        <script>
+
+        function openInNewTabAndRedirect(url) {
+            window.open(url, "test", "height=500,width=500");     // Open in a a new tab
+            window.location.href = url;                          // Redirect to this webpage
+        }
+
+</script>
         <script type="text/javascript" src="webcam.js"></script>
     </body>
 </html>

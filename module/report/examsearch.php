@@ -240,6 +240,9 @@
     <a href="module/report/examprint2.php?term=<?= $term_s ?>&&year=<?= $year_s ?>&&class=<?= $class_s ?>&&faculty=<?= $faculty_s ?>&&department=<?= $department_s ?>&&status=<?= $status_s ?>" target="_blank">
         <button type="button" class="btn btn-primary btn-sm" name="save"><span class="glyphicon glyphicon-print"></span> PRINT EXELL</button>
     </a>
+    <a href="module/report/examprint3.php?term=<?= $term_s ?>&&year=<?= $year_s ?>&&class=<?= $class_s ?>&&faculty=<?= $faculty_s ?>&&department=<?= $department_s ?>&&status=<?= $status_s ?>" target="_blank">
+        <button type="button" class="btn btn-primary btn-sm" name="save"><span class="glyphicon glyphicon-print"></span> PRINT EXELL RUMI</button>
+    </a>
     <a href="module/report/examprint.php?term=<?= $term_s ?>&&year=<?= $year_s ?>&&class=<?= $class_s ?>&&faculty=<?= $faculty_s ?>&&department=<?= $department_s ?>&&status=<?= $status_s ?>" target="_blank">
         <button type="button" class="btn btn-primary btn-sm" name="save"><span class="glyphicon glyphicon-print"></span> PRINT</button>
     </a>

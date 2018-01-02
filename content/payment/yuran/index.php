@@ -50,11 +50,9 @@
     // This sets the range of rows to query for the chosen $pagenum
     $limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
     // This is your query again, it is for grabbing just one page worth of rows by applying $limit
-    $sql = "SELECT sr.sr_id as id,sr.*,st.*,p.* FROM student_register sr 
-            INNER JOIN students st ON sr.st_id=st.st_id
-            LEFT OUTER JOIN payments p ON p.sr_id=sr.sr_id 
-            GROUP BY p.sr_id
-            ORDER BY p_id DESC  $limit";
+    $sql = "SELECT sr.*,s.* FROM student_register sr
+            INNER JOIN students s ON sr.st_id=s.st_id
+            ORDER BY sr.sr_id DESC  $limit";
     $query = mysqli_query($con, $sql);
     // This shows the user what page they are on, and the total number of pages
     $textline1 = "จำนวน(<b>$rows</b>)";
@@ -102,7 +100,7 @@
       <td align="center"><b>NAMA-NASAB</b></td>
       <td align="center"><div id="subText"><b>نام - نسب</b></div></td>
       <td align="center"><b>SEMESTER/TAHUN</b></td>
-      <td align="center"><b>RESIT</b></td>
+      <!--<td align="center"><b>RESIT</b></td> -->
       <td align="center"><b>STATUS</b></td>
       <td align="center"><b>Hapus</b></td>
     </tr>
@@ -110,7 +108,7 @@
   <tbody>
 <?php
     while($row = mysqli_fetch_array($query)){
-        $id = $row['id'];
+        $id = $row['sr_id'];
         $student_id = str_replace("\'", "&#39;", $row["student_id"]);
         $name_r = str_replace("\'", "&#39;", $row["firstname_rumi"]);
         $lastname_r = str_replace("\'", "&#39;", $row["lastname_rumi"]);
@@ -126,7 +124,7 @@
       <td align="left"><?= strtoupper($name_r) ?> - <?= strtoupper($lastname_r) ?></td>
       <td align="right"><div id='subText'><?= $name_j ?> - <?= $lastname_j ?></div></td>
       <td align="center"><?= $term ?>/<?= $year ?></td>
-      <td align="center"><?= $row['reciet_code'] ?></td>
+      <!--<td align="center"><?php //$row['reciet_code'] ?></td>-->
       <td align="center">
           
           <?php

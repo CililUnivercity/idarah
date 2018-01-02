@@ -43,7 +43,7 @@ padding:0;
 <script  type="text/javascript">
     var studentid = <?php echo $st_id; ?>;
     webcam.set_api_url( 'handleimage.php?studentid='+studentid );
-		webcam.set_quality( 90 ); // JPEG quality (1 - 100)
+		webcam.set_quality( 100 ); // JPEG quality (1 - 100)
 		webcam.set_shutter_sound( true ); // play shutter click sound
 		webcam.set_hook( 'onComplete', 'my_completion_handler' );
 

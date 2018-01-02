@@ -126,7 +126,7 @@
     $sql = "SELECT s.*,f.*,d.* FROM students s 
             INNER JOIN fakultys f ON s.ft_id=f.ft_id
             INNER JOIN departments d ON s.dp_id=d.dp_id
-            WHERE s.class='$class_s' and f.ft_id='$faculty_s' and d.dp_id='$department_s' and s.muqaddimah='1' ORDER BY s.gender,s.student_id DESC $limit";
+            WHERE s.class='$class_s' and f.ft_id='$faculty_s' and d.dp_id='$department_s' and s.muqaddimah='1' ORDER BY s.student_id ASC $limit";
     $query = mysqli_query($con, $sql);
     // This shows the user what page they are on, and the total number of pages
     $textline1 = "จำนวน(<b>$rows</b>)";

@@ -7,9 +7,7 @@
         $objResult['t_id'];
         
         //Get subject data
-        $subject = mysqli_query($con, "SELECT tc.*,s.* FROM teaching tc
-                                INNER JOIN subject s ON tc.s_id=s.s_id
-                                WHERE tc.t_id='$id'");
+        $subject = mysqli_query($con, "SELECT rs.*,s.* FROM registerSubject rs INNER JOIN subject s ON rs.s_id=s.s_id WHERE rs.t_id='$id' GROUP BY s.s_id");
         
         //Get faculty data
         $faculty = mysqli_query($con, "SELECT * FROM fakultys");

@@ -14,7 +14,7 @@
         <td align="center"><div id="subText"><b>فيليهن كدوا</b></div></td>
         <td align="center"><div id="subText"><b>فيليهن فرتام</b></div></td>
         <td align="center"><div id="subText"><b>نمبر</b></div></td>
-        <td align="center"><div id="subText"><b>بيليق</b></div></td>
+        <td align="center"><div id="subText"><b>تليفون</b></div></td>
         <td align="center"><div id="subText"><b>نمبر دفتر</b></div></td>
         <td align="center"><div id="subText"><b>کمفوڠ</b></div></td>
         <td align="center"><div id="subText"><b>سكوله</b></div></td>
@@ -37,6 +37,7 @@
             $testNumber = $rowPretestMen['testNumber'];
             $odrNumber = $rowPretestMen['odrNumber'];
             $sanawiVillage = str_replace("\'", "&#39;", $rowPretestMen["sanawiVillage"]);
+            $telephone = $rowPretestMen["telephone"];
             
             //Faculty and department choesed
             $first_ftId = $rowPretestMen['first_ftId'];
@@ -45,46 +46,56 @@
             $second_dpId = $rowPretestMen['second_dpId'];
             
             //First selection
-            if($first_dpId == '0'){
-                $fId = $first_ftId;
-                //Setting
-                if($fId == '122'){
-                    $selected = 'S';
-                }elseif($fId == '123'){
-                    $selected = 'U';
-                }else{
-                    $selected = 'D';
-                }
-            }else{
-                $fId = $first_dpId;
-                //Setting
-                if($fId == '22'){
-                    $selected = 'PAI';
-                }else{
-                    $selected = 'PBSM';
-                }
-            }
-            
-            //Second selection
-            if($second_dpId == '0'){
-                $sId = $second_ftId;
-                //Setting
-                if($sId == '122'){
-                    $selected2 = 'S';
-                }elseif($sId == '123'){
-                    $selected2 = 'U';
-                }else{
-                    $selected2 = 'D';
-                }
-            }else{
-                $sId = $second_dpId;
-                //Setting
-                if($sId == '22'){
-                    $selected2 = 'PAI';
-                }else{
-                    $selected2 = 'PBSM';
-                }
-            }
+                            if($first_dpId == '0'){
+                                $fId = $first_ftId;
+                                //Setting
+                                if($fId == '122'){
+                                    $selected = 'S';
+                                }elseif($fId == '123'){
+                                    $selected = 'U';
+                                }elseif($sId == '124'){
+                                    $selected = 'D';
+                                }
+                            }elseif($first_dpId != '0'){
+                                $fId = $first_dpId;
+                                switch ($fId){
+                                    case 22:
+                                        $selected = "PAI";
+                                        break;
+                                    case 23:
+                                        $selected = "PBSM";
+                                        break;
+                                    case 28:
+                                        $selected = "MM Dakwah";
+                                        break;
+                                }
+                            }
+
+                            //Second selection
+                            if($second_dpId == '0'){
+                                $sId = $second_ftId;
+                                //Setting
+                                if($sId == '122'){
+                                    $selected2 = 'S';
+                                }elseif($sId == '123'){
+                                    $selected2 = 'U';
+                                }elseif($sId == '124'){
+                                    $selected2 = 'D';
+                                }
+                            }elseif($second_dpId != '0'){
+                                $fId = $second_dpId;
+                                switch ($fId){
+                                    case 22:
+                                        $selected2 = "PAI";
+                                        break;
+                                    case 23:
+                                        $selected2 = "PBSM";
+                                        break;
+                                    case 28:
+                                        $selected2 = "MM Dakwah";
+                                        break;
+                                }
+                            }
             
 
     ?>
@@ -92,7 +103,7 @@
             <td align="center"><?= $selected2 ?></td>
             <td align="center"><?= $selected ?></td>
             <td align="center"><?= $testNumber ?></td>
-            <td align="center"><?= $testClass ?></td>
+            <td align="center"><?= $telephone ?></td>
             <td align="center"><?= $odrNumber ?></td>
             <td align="right"><div id="subText"><?= $sanawiVillage ?></div></td>
             <td align="right"><div id="subText"><?= $sanawi_graduate ?></div></td>

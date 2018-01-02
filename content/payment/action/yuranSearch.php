@@ -5,11 +5,9 @@
     $tt = mysqli_real_escape_string($con, $_POST['q']);
     $q = addslashes($tt);
 
-    $search = mysqli_query($con, "SELECT sr.sr_id as id,sr.*,st.*,p.* FROM student_register sr 
-            INNER JOIN students st ON sr.st_id=st.st_id
-            LEFT OUTER JOIN payments p ON p.sr_id=sr.sr_id
-            WHERE stu_id='$q' or firstname_jawi LIKE '%".$q."%' or firstname_rumi LIKE '%".$q."%' OR reciet_code = '$q'
-            GROUP BY p.sr_id
+    $search = mysqli_query($con, "SELECT sr.*,s.* FROM student_register sr
+            INNER JOIN students s ON sr.st_id=s.st_id
+            WHERE sr.stu_id='$q' or s.firstname_jawi LIKE '%".$q."%' or s.firstname_rumi LIKE '%".$q."%'
             ORDER BY sr.sr_id
             ");
 	
@@ -36,7 +34,7 @@
 RES;
 	
     while($row = mysqli_fetch_array($search)){
-        $id = $row['id'];
+        $id = $row['sr_id'];
         $student_id = str_replace("\'", "&#39;", $row["student_id"]);
         $name_r = str_replace("\'", "&#39;", $row["firstname_rumi"]);
         $lastname_r = str_replace("\'", "&#39;", $row["lastname_rumi"]);

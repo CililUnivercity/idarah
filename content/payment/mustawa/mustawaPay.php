@@ -1,5 +1,6 @@
 <?php
     include '../../../connect.php';
+    include '../../function/global.php';
     $st_id = $_POST['st_id'];
     
     //Student data
@@ -79,7 +80,7 @@
         <style>
             div.scrollMus{
                 width: 100%;
-                height: 200px;
+                height: 300px;
                 overflow: scroll;
             }
         </style>
@@ -99,31 +100,59 @@
                         <td align="center"><b>JUMLAH DUIT</b></td>
                         <td align="center"><b>RESIT</b></td>
                         <td align="center"><b>GRUP BELAJAR</b></td>
-                        <td align="center"><b>MUSTAWA</b></td>
+                        <td align="center"><b>MUSTAWA/TAHUN</b></td>
                         <td align="center"><b>HAPUS</b></td>
                         <td align="center"><b>PRINT RESIT</b></td>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                    $ir = 1;
                     while($mustawa_register_result = mysqli_fetch_array($mustawa_register)){
                         $mustawa_register_id = $mustawa_register_result['mustawa_register_id'];
                         $register_date = $mustawa_register_result['register_date'];
                         $payMoney = $mustawa_register_result['payMoney'];
                         $reciet = $mustawa_register_result['reciet'];
                         $leaningGroup = $mustawa_register_result['learningGroup'];
-                        $level = $mustawa_register_result['level'];
+                        //$level = $mustawa_register_result['level'];
+                        $mustawa_data_id = $mustawa_register_result['mustawadata_id'];
+                        
+                        //get mustawa data from 'mustawa_data' table
+                        $md = queryList("mustawadata", "mustawaData_id='$mustawa_data_id'", "../../connect.php");
+                        $md_year = $md['year'];
+                        $md_level = $md['level'];
+                        $md_group_number = $md['group_number'];
                     ?>
                     <tr id="<?= $mustawa_register_id ?>">
                         <td align="center"><?= $register_date ?></td>
                         <td align="center"><?= $payMoney ?></td>
                         <td align="center"><?= str_pad($reciet, 3, "0", STR_PAD_LEFT) ?></td>
-                        <td align="center"><?= $leaningGroup ?></td>
-                        <td align="center"><?= $level ?></td>
-                        <td align="center"><a onclick="deleteMustawaHistory('<?= $mustawa_register_id ?>', '<?= $st_id ?>')" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-remove"></span> HAPUS</a></td>
+                        <td align="center">
+                            <form class="form-horizontal">
+                                <div class='form-group'>
+                                    <div class="col-lg-9">
+                                        <select class="form-control" id="leaningGroup<?= $mustawa_register_id ?>" name="<?= $mustawa_register_id ?>" onchange="changeMustawaGroup(this.id, <?= $ir ?>)">
+                                            <?php
+                                                $mg = 1;
+                                                while($mg<=$md_group_number){
+                                            ?>
+                                            <option value="<?= $mg ?>" <?php if($leaningGroup==$mg){echo 'selected';} ?>><?= $mg ?></option>
+                                            <?php 
+                                                $mg++;
+                                                } 
+                                            ?>
+                                        </select>
+                                        <div id="savingAlert<?= $ir ?>"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+                        <td align="center"><?= $md_level ?>/<?= $md_year ?></td>
+                        <td align="center"><a onclick="deleteMustawaHistory('<?= $mustawa_register_id ?>', '<?= $st_id ?>')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span> HAPUS</a></td>
                         <td align="center"><a href="content/payment/mustawa/reciet.php?st_id=<?= $st_id ?>&mustawa_register_id=<?= $mustawa_register_id ?>" target="_blank" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-print"></span> PRINT RESIT</a></td>
                     </tr>
                     <?php
+                    $ir++;
                     }
                     ?>
                 </tbody>

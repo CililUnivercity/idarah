@@ -45,6 +45,7 @@
     <li role="presentation"><a href="?page=student&&studentpage=listed"><span class='glyphicon glyphicon-user'></span> Data mahasiswa</a></li>
     <li role="presentation"><a href="?page=activity&&activitypage=history"><span class='glyphicon glyphicon-tasks'></span> Aktivitas</a></li>
     <li role="presentation"><a href="?page=setting&&settingpage=specialScore"><span class='glyphicon glyphicon-cog'></span> Perkuliahan</a></li>
+    <li role="presentation"><a href="?page=dorForAmir&&dolpage=main"><span class='glyphicon glyphicon-th-large'></span> Sistem Dur</a></li>
     <li role="presentation"><a href="#"><span class='glyphicon glyphicon-tasks'></span> Borang / Form</a></li>
     <li role="presentation"><a href="#"><span class='glyphicon glyphicon-comment'></span> Peraturan</a></li>
     <li role="presentation"><a href="#"><span class='glyphicon glyphicon-compressed'></span> Struktur</a></li>
@@ -65,10 +66,11 @@
     <li role="presentation"><a href="?page=mustawa"><span class='glyphicon glyphicon-blackboard'></span> Pengajian mustawa</a></li>
     <li role="presentation"><a href="?page=post&&postpage=main"><span class='glyphicon glyphicon-tasks'></span> Post maklumat</a></li>
     <li role="presentation"><a href="?page=rs&&rspage=main"><span class='glyphicon glyphicon-flag'></span> Special menu</a></li>
-    <li role="presentation"><a href="?page=dol&&dolpage=main"><span class='glyphicon glyphicon-compressed'></span> Sistem dur</a></li>
+    <li role="presentation"><a href="?page=dur"><span class='glyphicon glyphicon-compressed'></span> Sistem dur</a></li>
     <li role="presentation"><a href="?page=transcript&&transcriptpage=main"><span class='glyphicon glyphicon-stats'></span> Transcip</a></li>
     <li role="presentation"><a href="?page=admissions&&admissionpage=default"><span class='glyphicon glyphicon-stats'></span> Penerimaan mahasiswa baru</a></li>
     <li role="presentation"><a href="?page=attendance"><span class='glyphicon glyphicon-menu-hamburger'></span> Catatan kehadiran</a></li>
+    <li role="presentation"><a href="?page=studentCard"><span class='glyphicon glyphicon-list'></span> Kartu mahasiswa</a></li>
 </ul>
 <?php 
     }elseif($status == 'Pensyarah'){

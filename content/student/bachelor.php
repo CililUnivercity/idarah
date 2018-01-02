@@ -125,7 +125,7 @@
           </td>
           <td align="right">
              
-              <h4><a href="#"><span class="glyphicon glyphicon-print"></span></a> | <a <?= $selectAction ?> href="#"><span class="glyphicon glyphicon-edit"></span></a> | <a onclick="deleteData('<?= $id ?>')" href="#"><span class="glyphicon glyphicon-trash"></span></a></h4>
+              <h4><a href="#"><span class="glyphicon glyphicon-print"></span></a> | <a <?= $selectAction ?> href="#"><span class="glyphicon glyphicon-edit"></span></a></h4>
           </td>
         </tr>
         <?php

@@ -26,9 +26,14 @@
         $lastname_j = str_replace("\'", "&#39;", $row["lastname_jawi"]);
         $cityzen_id = $row['cityzen_id'];
         $telephone = $row['telephone'];
+        if($student_id==""){
+            $std_id = "CLICK";
+        }else{
+            $std_id = $student_id;
+        }
 ?>
         <tr>
-            <td align="center"><a href="#" onclick="mustawaPay('<?= $st_id ?>')"><?= $student_id ?></a></td>
+            <td align="center"><a href="#" onclick="mustawaPay('<?= $st_id ?>')"><?= $std_id ?></a></td>
             <td><?= $name_r ?> - <?= $lastname_r  ?></td>
             <td align="right"><div id="subText"><?= $name_j ?> - <?= $lastname_j ?></div></td>
             <td align="center"><?= $cityzen_id ?></td>

@@ -1,14 +1,26 @@
+<style>
+    #listbox{
+        position: absolute;
+        width: 300px;
+        border: solid 1px black;
+        background-color: #eeeeee;
+        display: none;
+        alignment-adjust: right;
+        text-align: left;
+    }
+</style>
         <div class='pull-left'>
-            <span class="glyphicon glyphicon-option-vertical"></span> <b>SISTEM DUL</b>
+            <span class="glyphicon glyphicon-option-vertical"></span> <b>SISTEM DUR</b>
         </div>
         <div class='pull-right'>
-            <a href="?page=dol&&dolpage=main" class='btn btn-success btn-sm'><span class='glyphicon glyphicon-list'></span> SEMUA</a>
-            <a href="?page=dol&&search=list&&dolpage=list" class='btn btn-success btn-sm'><span class='glyphicon glyphicon-list'></span> DAFTAR DUL</a>
+            <a href="?page=dol&&dolpage=main" class='btn btn-success btn-sm'><span class='glyphicon glyphicon-list'></span> PEMOHON</a>
+            <a href="?page=dol&&search=list&&dolpage=list" class='btn btn-success btn-sm'><span class='glyphicon glyphicon-list'></span> TERDAFTAR</a>
+            <!--<a href="?page=dol&&search=list&&dolpage=manual" class='btn btn-success btn-sm'><span class='glyphicon glyphicon-list'></span> MANUAL</a>-->
         </div>
         <br>
         <hr>
         <?php
-            $search = $_GET['search']; // To get the page
+            $search = $_GET['dolpage']; // To get the page
             if($search == 'list'){
         ?>
         <!-- Search box -->
@@ -23,7 +35,7 @@
                 </form>
         </div>
         <?php
-            }else{
+            }elseif($search == 'main') {
         ?>
         <!-- Search box -->
         <p>
@@ -38,6 +50,20 @@
                     </form>
             </div>
         <p/>
+        <?php
+            }else{
+        ?>
+                <div class="pull-right">
+                    <form class="navbar-form" role="search" name="studentSearchForm" id="studentSearchForm">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-sm" name="q" id="q" required autofocus onkeypress="return isPressEnterYuran()" onkeyup="studentSearchAutoComp()">
+                            <div class="input-group-btn">
+                                <button class="btn btn-success btn-sm" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                        <div id="listbox"></div>
+                    </form>
+            </div>
         <?php
             }
         ?>
@@ -70,6 +96,9 @@
                     break;
                 case 'scoreSave':
                     include 'module/dol/scoreSave.php';
+                    break;
+                case 'manual':
+                    include 'module/dol/manual.php';
                     break;
             }
         ?>

@@ -93,28 +93,30 @@
                 
                 if($department=='0'){
                 $sql = mysqli_query($con, "SELECT p.reciet_code AS yc,px.reciet_code AS ec,s.*,sr.*,sx.*,p.*,px.* FROM students s
-                                INNER JOIN student_register sr ON s.st_id=sr.st_id
-                                INNER JOIN student_register_exam sx ON s.st_id=sx.st_id
-                                INNER JOIN payments p ON s.st_id=p.st_id
-                                INNER JOIN exam_pay px ON s.st_id=px.st_id
+                                JOIN student_register sr ON s.st_id=sr.st_id
+                                JOIN student_register_exam sx ON s.st_id=sx.st_id
+                                JOIN payments p ON s.st_id=p.st_id
+                                JOIN exam_pay px ON s.st_id=px.st_id
                                 WHERE s.class='$class' AND s.ft_id='$faculty'
                                 AND sr.academic_year='$year' AND sr.term='$termRg' AND sr.pay_status='SUDAH LUNAS'
-                                AND sx.year='$year' AND sr.term='$termRg' AND sx.pay_status='SUDAH LUNAS'
+                                AND sx.year='$year' AND sx.term='$termRg' AND sx.pay_status='SUDAH LUNAS'
                                 AND p.academicYear='$year'
                                 AND px.academic_year='$year'
+                                GROUP BY s.student_id
                                 ORDER BY s.student_id
                                 ");
                 }else{
                     $sql = mysqli_query($con, "SELECT p.reciet_code AS yc,px.reciet_code AS ec,s.*,sr.*,sx.*,p.*,px.* FROM students s
-                                INNER JOIN student_register sr ON s.st_id=sr.st_id
-                                INNER JOIN student_register_exam sx ON s.st_id=sx.st_id
-                                INNER JOIN payments p ON s.st_id=p.st_id
-                                INNER JOIN exam_pay px ON s.st_id=px.st_id
+                                JOIN student_register sr ON s.st_id=sr.st_id
+                                JOIN student_register_exam sx ON s.st_id=sx.st_id
+                                JOIN payments p ON s.st_id=p.st_id
+                                JOIN exam_pay px ON s.st_id=px.st_id
                                 WHERE s.class='$class' AND s.ft_id='$faculty' AND s.dp_id='$department'
                                 AND sr.academic_year='$year' AND sr.term='$termRg' AND sr.pay_status='SUDAH LUNAS'
-                                AND sx.year='$year' AND sr.term='$termRg' AND sx.pay_status='SUDAH LUNAS'
+                                AND sx.year='$year' AND sx.term='$termRg' AND sx.pay_status='SUDAH LUNAS'
                                 AND p.academicYear='$year'
                                 AND px.academic_year='$year'
+                                GROUP BY s.student_id
                                 ORDER BY s.student_id
                                 ");
                 }

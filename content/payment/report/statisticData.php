@@ -740,6 +740,152 @@
         $sum_dir2_register = $dir12Count + $dir22Count + $dir32Count + $dir42Count;
         $sum_dir2_payed = $dir12CountPayed + $dir22CountPayed + $dir32CountPayed + $dir42CountPayed;
         $sum_dir2_notPayed = $dir12CountNotPay + $dir22CountNotPay + $dir32CountNotPay + $dir42CountNotPay;
+        
+        //-------------------------------------------------------DAKWAH-------------------------------------------------
+        //DIRASAT class 1  term 1
+        $dak11 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$first' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak11Count = mysqli_num_rows($dak11);
+        
+        $dak11payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                            INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                            WHERE s.dp_id='28' AND sr.term='1' AND s.class='$first' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak11CountPayed = mysqli_num_rows($dak11payed);
+        
+        $dak11notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$first' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak11CountNotPay = mysqli_num_rows($dak11notPay);
+        
+        //DIRASAT class 1  term 2-----------------------------------------------
+        $dak12 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$first' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak12Count = mysqli_num_rows($dak12);
+        
+        $dak12payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                            INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                            WHERE s.dp_id='28' AND sr.term='2' AND s.class='$first' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak12CountPayed = mysqli_num_rows($dak12payed);
+        
+        $dak12notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$first' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak12CountNotPay = mysqli_num_rows($dak12notPay);
+        
+        //DIRASAT class 2  term 1-----------------------------------------------
+        $dak21 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$second' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak21Count = mysqli_num_rows($dak21);
+        
+        $dak21payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                            INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                            WHERE s.dp_id='28' AND sr.term='1' AND s.class='$second' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak21CountPayed = mysqli_num_rows($dak21payed);
+        
+        $dak21notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$second' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak21CountNotPay = mysqli_num_rows($dak21notPay);
+        
+        //DIRASAT class 2  term 2-----------------------------------------------
+        $dak22 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$second' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak22Count = mysqli_num_rows($dir22);
+        
+        $dak22payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                            INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                            WHERE s.dp_id='28' AND sr.term='2' AND s.class='$second' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak22CountPayed = mysqli_num_rows($dak22payed);
+        
+        $dak22notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$second' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak22CountNotPay = mysqli_num_rows($dak22notPay);
+        
+        //DIRASAT class 3  term 1-----------------------------------------------
+        $dak31 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$third' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak31Count = mysqli_num_rows($dak31);
+        
+        $dak31payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             INNER JOIN payments p ON sr.sr_id=p.sr_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$third' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak31CountPayed = mysqli_num_rows($dak31payed);
+        
+        $dak31notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$third' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak31CountNotPay = mysqli_num_rows($dak31notPay);
+        
+        //DIRASAT class 3  term 2-----------------------------------------------
+        $dak32 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$third' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak32Count = mysqli_num_rows($dir32);
+        
+        $dak32payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             INNER JOIN payments p ON sr.sr_id=p.sr_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$third' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak32CountPayed = mysqli_num_rows($dak32payed);
+        
+        $dak32notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$third' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak32CountNotPay = mysqli_num_rows($dak32notPay);
+        
+        //DIRASAT class 4  term 1-----------------------------------------------
+        $dak41 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$fordth' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak41Count = mysqli_num_rows($dak41);
+        
+        $dak41payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                            INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                            WHERE s.dp_id='28' AND sr.term='1' AND s.class='$fordth' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak41CountPayed = mysqli_num_rows($dak41payed);
+        
+        $dak41notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='1' AND s.class='$fordth' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak41CountNotPay = mysqli_num_rows($dak41notPay);
+        
+        //DIRASAT class 4  term 2-----------------------------------------------
+        $dak42 = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$fordth' AND sr.academic_year='$cy' AND s.program='0'
+                             ");
+        $dak42Count = mysqli_num_rows($dak42);
+        
+        $dak42payed = mysqli_query($con, "SELECT s.*,sr.*,p.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                            INNER JOIN payments p ON sr.sr_id=p.sr_id 
+                            WHERE s.dp_id='28' AND sr.term='2' AND s.class='$fordth' AND sr.academic_year='$cy' AND (sr.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $dak42CountPayed = mysqli_num_rows($dak42payed);
+        
+        $dak42notPay = mysqli_query($con, "SELECT s.*,sr.* FROM students s INNER JOIN student_register sr ON s.st_id=sr.st_id
+                             WHERE s.dp_id='28' AND sr.term='2' AND s.class='$fordth' AND sr.academic_year='$cy' AND (sr.pay_status='BELUM LUNAS' OR sr.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $dak42CountNotPay = mysqli_num_rows($dak42notPay);
+        
+        //SUM DIRASAT
+        $sum_dak1_register = $dak11Count + $dak21Count + $dak31Count + $dak41Count;
+        $sum_dak1_payed = $dak11CountPayed + $dak21CountPayed + $dak31CountPayed + $dak41CountPayed;
+        $sum_dak1_notPayed = $dak11CountNotPay + $dak21CountNotPay + $dak31CountNotPay + $dak41CountNotPay;
+        
+        $sum_dak2_register = $dak12Count + $dak22Count + $dak32Count + $dak42Count;
+        $sum_dak2_payed = $dak12CountPayed + $dak22CountPayed + $dak32CountPayed + $dak42CountPayed;
+        $sum_dak2_notPayed = $dak12CountNotPay + $dak22CountNotPay + $dak32CountNotPay + $dak42CountNotPay;
 
         //Exam report
         //-------------------------------------------------------PAI-------------------------------------------------
@@ -1424,11 +1570,148 @@
                              WHERE s.ft_id='124' AND srx.term='2' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
                              ");
         $exam_dir42CountNotPay = mysqli_num_rows($exam_dir42notPay);
-        
         //SUM DIRASAT
         $sumExam_dir1_register = $exam_dir11Count + $exam_dir21Count + $exam_dir31Count + $exam_dir41Count;
         $sumExam_dir1_payed = $exam_dir11CountPayed + $exam_dir21CountPayed + $exam_dir31CountPayed + $exam_dir41CountPayed;
         $sumExam_dir1_notPayed = $exam_dir11CountNotPay + $exam_dir21CountNotPay + $exam_dir31CountNotPay + $exam_dir41CountNotPay;
+        
+        $sumExam_dir2_register = $exam_dir12Count + $exam_dir22Count + $exam_dir32Count + $exam_dir42Count;
+        $sumExam_dir2_payed = $exam_dir12CountPayed + $exam_dir22CountPayed + $exam_dir32CountPayed + $exam_dir42CountPayed;
+        $sumExam_dir2_notPayed = $exam_dir12CountNotPay + $exam_dir22CountNotPay + $exam_dir32CountNotPay + $exam_dir42CountNotPay;
+        
+        //-------------------------------------------------------DAKWAH-------------------------------------------------
+        //DAKWAH class 1  term 1
+        $exam_dak11 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$first' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak11Count = mysqli_num_rows($exam_dak11);
+        
+        $exam_dak11payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$first' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak11CountPayed = mysqli_num_rows($exam_dak11payed);
+        
+        $exam_dak11notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='124' AND srx.term='1' AND s.class='$first' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak11CountNotPay = mysqli_num_rows($exam_dak11notPay);
+        
+        //DAKWAH class 1  term 2-----------------------------------------------
+        $exam_dak12 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$first' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak12Count = mysqli_num_rows($exam_dak12);
+        
+        $exam_dak12payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$first' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak12CountPayed = mysqli_num_rows($exam_dak12payed);
+        
+        $exam_dak12notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$first' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak12CountNotPay = mysqli_num_rows($exam_dak12notPay);
+        
+        //DIRASAT class 2  term 1-----------------------------------------------
+        $exam_dak21 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$second' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak21Count = mysqli_num_rows($exam_dak21);
+        
+        $exam_dak21payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$second' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak21CountPayed = mysqli_num_rows($exam_dak21payed);
+        
+        $exam_dak21notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$second' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak21CountNotPay = mysqli_num_rows($exam_dak21notPay);
+        
+        //DAKWAH class 2  term 2-----------------------------------------------
+        $exam_dak22 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$second' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak22Count = mysqli_num_rows($exam_dak22);
+        
+        $exam_dak22payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$second' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak22CountPayed = mysqli_num_rows($exam_dak22payed);
+        
+        $exam_dak22notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$second' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak22CountNotPay = mysqli_num_rows($exam_dak22notPay);
+        
+        //DAKWAH class 3  term 1-----------------------------------------------
+        $exam_dak31 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$third' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak31Count = mysqli_num_rows($exam_dak31);
+        
+        $exam_dak31payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$third' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak31CountPayed = mysqli_num_rows($exam_dak31payed);
+        
+        $exam_dak31notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$third' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak31CountNotPay = mysqli_num_rows($exam_dak31notPay);
+        
+        //DAKWAH class 3  term 2-----------------------------------------------
+        $exam_dak32 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$third' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak32Count = mysqli_num_rows($exam_dak32);
+        
+        $exam_dak32payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$third' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak32CountPayed = mysqli_num_rows($exam_dak32payed);
+        
+        $exam_dak32notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$third' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak32CountNotPay = mysqli_num_rows($exam_dak32notPay);
+        
+        //DIRASAT class 4  term 1-----------------------------------------------
+        $exam_dak41 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$fordth' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak41Count = mysqli_num_rows($exam_dak41);
+        
+        $exam_dak41payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak41CountPayed = mysqli_num_rows($exam_dak41payed);
+        
+        $exam_dak41notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='1' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak41CountNotPay = mysqli_num_rows($exam_dak41notPay);
+        
+        //DAKWAH class 4  term 2-----------------------------------------------
+        $exam_dak42 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$fordth' AND srx.year='$cy' AND s.program='0'
+                             ");
+        $exam_dak42Count = mysqli_num_rows($exam_dak42);
+        
+        $exam_dak42payed = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='SUDAH LUNAS') AND s.program='0'
+                             ");
+        $exam_dak42CountPayed = mysqli_num_rows($exam_dak42payed);
+        
+        $exam_dak42notPay = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.dp_id='28' AND srx.term='2' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='BELUM LUNAS' or srx.pay_status='Belum bayar') AND s.program='0'
+                             ");
+        $exam_dak42CountNotPay = mysqli_num_rows($exam_dak42notPay);
+        
+        //SUM DAKWAH
+        $sumExam_dak1_register = $exam_dak11Count + $exam_dak21Count + $exam_dak31Count + $exam_dak41Count + $exam_dak41Count;
+        $sumExam_dak1_payed = $exam_dak11CountPayed + $exam_dak21CountPayed + $exam_dak31CountPayed + $exam_dak41CountPayed;
+        $sumExam_dak1_notPayed = $exam_dir11CountNotPay + $exam_dir21CountNotPay + $exam_dir31CountNotPay + $exam_dir41CountNotPay;
         
         $sumExam_dir2_register = $exam_dir12Count + $exam_dir22Count + $exam_dir32Count + $exam_dir42Count;
         $sumExam_dir2_payed = $exam_dir12CountPayed + $exam_dir22CountPayed + $exam_dir32CountPayed + $exam_dir42CountPayed;
@@ -1450,4 +1733,13 @@
                                    ");
         $rowTotalMoney2 = mysqli_fetch_array($totalMoney2);
         $resultTotalMoney2 = $rowTotalMoney2['totalMoney'];
+        
+        
+        // sum register student yuran term1
+        $srsyt1 = mysqli_query($con, "SELECT * FROM student_register WHERE academic_year='$cy' AND term='1'");
+        $tsrsyt1 = mysqli_num_rows($srsyt1);
+        
+        // sum register student yuran term1 AND payed
+        $srsyt1payed = mysqli_query($con, "SELECT * FROM student_register WHERE academic_year='$cy' AND term='1' AND pay_status='SUDAH LUNAS'");
+        $tsrsyt1payed = mysqli_num_rows($srsyt1payed);
 ?>

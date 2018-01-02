@@ -128,7 +128,7 @@
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-4 control-label">MUQADDIMAH :</label>
         <div class="col-sm-4">
-            <input type="number" name="money" class="form-control" value="700">
+            <input type="number" name="money" class="form-control" value="1000">
         </div>
     </div>
  

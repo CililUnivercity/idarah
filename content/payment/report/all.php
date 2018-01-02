@@ -25,6 +25,14 @@
 </div>
 
 <div class="btn-group">
+    <button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-list"></span> LOPORAN MUSTAWA</button>
+    <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#" onclick="reportContent('mustawaReport','payment/report','')">SARJANA</a></li>
+        </ul>
+</div>
+
+<div class="btn-group">
     <button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-list"></span> LOPORAN NAMA UJIAN</button>
     <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
         <ul class="dropdown-menu">

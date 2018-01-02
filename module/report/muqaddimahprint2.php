@@ -57,13 +57,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
        </tr>
 
         <tr>
-            <td align="center" height="30"><b>نمبر رشيد</b></td>
-            <td align="center"><b>تغكل باير</b></td>
-            <td align="center"><b>مقدمة</b></td>
-            <td align="center"><b>باقا</b></td>
-            <td align="center"><b>نام</b></td>
-            <td align="center"><b>نمبرفوكؤ</b></td>
             <td align="center"><b>بيل</b></td>
+            <td align="center"><b>نمبرفوكؤ</b></td>
+            <td align="center"><b>نام</b></td>
+            <td align="center"><b>باقا</b></td>
+            <td align="center"><b>مقدمة</b></td>
+            <td align="center"><b>تغكل باير</b></td>
+            <td align="center" height="30"><b>نمبر رشيد</b></td>
         </tr>
             
         <?php
@@ -75,13 +75,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
         ?>
             
         <tr>
-            <td align="center"><?= $rs_search['m_reciet'] ?></td>
-            <td align="center"><?= $rs_search['m_paydate'] ?></td>
-            <td align="center"><?= number_format($rs_search['m_money']) ?></td>
-            <td align="right"><?= $rs_search['lastname_jawi'] ?></td>
-            <td align="right"><?= $rs_search['firstname_jawi'] ?></td>
-            <td align="center"><?= $rs_search['student_id'] ?></td>
             <td align="center"><?= $i ?></td>
+            <td align="center"><?= $rs_search['student_id'] ?></td>
+            <td align="right"><?= $rs_search['firstname_jawi'] ?></td>
+            <td align="right"><?= $rs_search['lastname_jawi'] ?></td>
+            <td align="center"><?= number_format($rs_search['m_money']) ?></td>
+            <td align="center"><?= $rs_search['m_paydate'] ?></td>
+            <td align="center"><?= $rs_search['m_reciet'] ?></td>
         </tr>
             
         <?php } ?>

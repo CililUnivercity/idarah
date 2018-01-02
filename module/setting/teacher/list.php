@@ -1,6 +1,7 @@
 <br>
 <div class="pull-left">
     <a href="?page=setting&&settingpage=teacherAdd" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span> TAMBAH</a>
+    <a target="_blank" href="module/setting/teacher/teacherPrint.php" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-print"></span> PRINT</a>
 </div>
 <div class="pull-right">
         <form class="navbar-form" role="search" action="?page=setting&&settingpage=searchTeacher" method="post">

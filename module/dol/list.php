@@ -2,7 +2,7 @@
 <br>
 <!-- Stadent table's data -->
 <?php
-    $pagic = "?page=dol&&dolpage=main";
+    $pagic = "?page=dol&&dolpage=list";
     $sql = "SELECT COUNT(dr_id) FROM dulRegister";
     $query = mysqli_query($con, $sql);
     $row = mysqli_fetch_row($query);
@@ -111,7 +111,8 @@
           <td align="center"><?= $dulCode ?></td>
           <!-- Modal showing -->
           <td align="center">
-              <a href="#" data-toggle="modal" data-target="#myModal<?php echo $dr_id ?>">
+              <a 
+                  >
                   <span class="glyphicon glyphicon-book"></span>
               </a>
                 |

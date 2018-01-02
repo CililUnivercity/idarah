@@ -8,7 +8,7 @@
         exit();
    }
   
-    $sql = mysqli_query($con, "SELECT * FROM students WHERE student_id LIKE '$title%' OR firstname_rumi LIKE '%$title%' OR lastname_rumi LIKE '%$title%' OR firstname_jawi LIKE '%$title%' OR lastname_jawi LIKE '%$title%' OR t_studentname LIKE '%$title%' OR t_studentlastname LIKE '%$title%'");
+    $sql = mysqli_query($con, "SELECT * FROM students WHERE student_id LIKE '$title%' OR firstname_rumi LIKE '%$title%' OR lastname_rumi LIKE '%$title%' OR firstname_jawi LIKE '%$title%' OR lastname_jawi LIKE '%$title%' OR t_studentname LIKE '%$title%' OR t_studentlastname LIKE '%$title%' LIMIT 0,10");
     $num = mysqli_num_rows($sql);
     
     if($num==0){

@@ -108,6 +108,24 @@
     $numDir4 = mysqli_num_rows($dir4);
     //----------------------------------
     
+    //DAKWAH
+    //Class 1
+    $dkw1 = mysqli_query($con, "SELECT * FROM students WHERE income_year='$rsAdmYear' AND class='$first' AND muqaddimah='1' AND ft_id='125'");
+    $numDkw1 = mysqli_num_rows($dkw1);
+    
+    //Class 2
+    $dkw2 = mysqli_query($con, "SELECT * FROM students WHERE income_year='$rsAdmYear' AND class='$second' AND muqaddimah='1' AND ft_id='125'");
+    $numDkw2 = mysqli_num_rows($dkw2);
+    
+    //Class 3
+    $dkw3 = mysqli_query($con, "SELECT * FROM students WHERE income_year='$rsAdmYear' AND class='$third' AND muqaddimah='1' AND ft_id='125'");
+    $numDkw3 = mysqli_num_rows($dkw3);
+    
+    //Class 4
+    $dkw4 = mysqli_query($con, "SELECT * FROM students WHERE income_year='$rsAdmYear' AND class='$fordth' AND muqaddimah='1' AND ft_id='125'");
+    $numDkw4 = mysqli_num_rows($dkw4);
+    //----------------------------------
+    
 ?>
 <h4><span class="glyphicon glyphicon-list"></span> MENGURUS NO.POKOK <?= $rsAdmYear ?></h4>
 <hr>
@@ -124,6 +142,7 @@
                     <td align="center">SYARIAH</td>
                     <td align="center">USULUDDIN</td>
                     <td align="center">DIRASAT</td>
+                    <td align="center">DAKWAH</td>
                 </tr>
                 
                 <tr align="center">
@@ -133,6 +152,7 @@
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $first ?>&&ft_id=122&&dp_id="><?= $numSya1 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $first ?>&&ft_id=123&&dp_id="><?= $numUsu1 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $first ?>&&ft_id=124&&dp_id="><?= $numDir1 ?></a></td>
+                    <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $first ?>&&ft_id=125&&dp_id="><?= $numDkw1 ?></a></td>
                 </tr>
             
                 <tr align="center">
@@ -142,6 +162,7 @@
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $second ?>&&ft_id=122&&dp_id="><?= $numSya2 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $second ?>&&ft_id=123&&dp_id="><?= $numUsu2 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $second ?>&&ft_id=124&&dp_id="><?= $numDir2 ?></a></td>
+                    <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $second ?>&&ft_id=125&&dp_id="><?= $numDkw2 ?></a></td>
                 </tr>
                 
                 <tr align="center">
@@ -151,6 +172,7 @@
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $third ?>&&ft_id=122&&dp_id="><?= $numSya3 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $third ?>&&ft_id=123&&dp_id="><?= $numUsu3 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $third ?>&&ft_id=124&&dp_id="><?= $numDir3 ?></a></td>
+                    <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $third ?>&&ft_id=125&&dp_id="><?= $numDkw3 ?></a></td>
                 </tr>
                 
                 <tr align="center">
@@ -160,6 +182,7 @@
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $fordth ?>&&ft_id=122&&dp_id="><?= $numSya4 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $fordth ?>&&ft_id=123&&dp_id="><?= $numUsu4 ?></a></td>
                     <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $fordth ?>&&ft_id=124&&dp_id="><?= $numDir4 ?></a></td>
+                    <td align="center"><a href="?page=admissions&&admissionpage=stdId&&class=<?= $fordth ?>&&ft_id=125&&dp_id="><?= $numDkw4 ?></a></td>
                 </tr>
                 
             </table>

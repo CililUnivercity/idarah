@@ -451,15 +451,6 @@
                 </div>        
             </div>
             
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Gambar 1 inci 4 keping :</label>	
-                <div class="col-lg-3">
-                    <div class="checkbox">
-                        <input type="checkbox" value="1" name="photo" <?php $photo = $result['photo']; if($photo == '1'){ echo 'checked'; } ?>> 
-                    </div>       
-                </div>
-            </div>	
-    
             <p class="text-success"><b>BAHAGIAN 6 : Pilihan kuliah</b></p>
     
             <div class="form-group">

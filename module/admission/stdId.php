@@ -43,9 +43,12 @@
         }elseif($ft_id == '123'){
             $dp_name = 'USU';
             $student = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE ft_id='123' AND income_year='$rsAdmYear' AND class='$class' AND muqaddimah='1' ORDER BY s.gender,s.firstname_jawi");
-        }else{
+        }elseif($ft_id == '124'){
             $dp_name = 'DIR';
             $student = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE ft_id='124' AND income_year='$rsAdmYear' AND class='$class' AND muqaddimah='1' ORDER BY s.gender,s.firstname_jawi");
+        }else{
+            $dp_name = 'DAKWAH';
+            $student = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE ft_id='125' AND income_year='$rsAdmYear' AND class='$class' AND muqaddimah='1' ORDER BY s.gender,s.firstname_jawi");
         }
     }
 ?>

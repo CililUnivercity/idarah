@@ -5,7 +5,9 @@
             <h4><span class="glyphicon glyphicon-user"></span> <b>PENGAJIAN MUSTAWA BAHASA ARAB</b></h4>
         </div>
         <div class="pull-right">
+            <a href="?page=mustawa" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-home"></span> Home</a>
             <a onclick="loadContent('result', 'mustawa', '')" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-map-marker"></span> Hasil pengajian</a>
+            <a onclick="loadContent('moneyReport', 'mustawa', '')" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-list-alt"></span> Laporan duit daftar</a>
         </div>
         
         <br><br>

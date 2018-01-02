@@ -48,7 +48,7 @@
     $confCertificate = mysqli_real_escape_string($con, $_POST['confCertificate']);
     $citizen_book = mysqli_real_escape_string($con, $_POST['citizen_book']);
     $id_book = mysqli_real_escape_string($con, $_POST['id_book']);
-    $photo = mysqli_real_escape_string($con, $_POST['photo']);
+    //$photo = mysqli_real_escape_string($con, $_POST['photo']);
     $idCard = mysqli_real_escape_string($con, $_POST['idCard']);
     $first_ftId = $_POST['first_ftId'];
     $first_dpId = $_POST['first_dpId'];
@@ -107,7 +107,6 @@
                             confCertificate  = '$confCertificate',
                             citizen_book = '$citizen_book',
                             id_book = '$id_book',
-                            photo = '$photo',
                             ibtidaiVillage = '$ibtidaiVillage',
                             mutawassitVillage = '$mutawassitVillage',
                             sanawiVillage = '$sanawiVillage'

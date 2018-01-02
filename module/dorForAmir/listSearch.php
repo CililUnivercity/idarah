@@ -47,11 +47,6 @@
               <a href="#" data-toggle="modal" data-target="#myModal<?php echo $dr_id ?>">
                   <span class="glyphicon glyphicon-book"></span>
               </a>
-                |
-              <a href="module/dol/dulPrint.php?id=<?= $dr_id ?>&&st_id=<?= $id ?>" target="_blank"><span class="glyphicon glyphicon-print"></span></a>
-                |
-              <a href="?page=dol&&search=list&&dolpage=listDelete&&id=<?= $dr_id ?>" onclick="return confirm('Anda yakin untuk hapus data ini ?')"><span class="glyphicon glyphicon-remove"></span></a>
-
           </td>
           
                         <!-- Modal form -->
@@ -63,7 +58,7 @@
                                 <h4 class="modal-title" id="myModalLabel<?php echo $dr_id ?>"><?= $dulCode ?></h4>
                               </div>
                               <div class="modal-body">
-                                  <form class="form-horizontal" action="?page=dol&&search=list&&dolpage=scoreSave" enctype="multipart/form-data" method="POST">
+                                  <form class="form-horizontal" action="?page=dorForAmir&&search=list&&dolpage=scoreSave" enctype="multipart/form-data" method="POST">
                                     <div class="panel panel-primary">                                       
                                             <div class="panel-body">
                                                 <?php

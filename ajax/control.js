@@ -5,7 +5,6 @@ function isPressEnter(){
         return false;
     }
 }
-
 function saveEditBachelor1(){
     var URL = "content/student/action/saveEditBachelor1.php?dummy=" + Math.random();
     var data = getFrmData('editStudentBachelor1');
@@ -439,6 +438,7 @@ function formLoad(content, folder){
     var data = null;
     ajaxLoadFrw('get', URL, data, "form");
     document.getElementById('form').innerHTML = "Loading....";
+    document.getElementById('lastStatement').innerHTML = "";
     alert(url); //Set timeout
     var t = 60000;
     timeoutF = setTimeout("ajaxTimeoutFrw()", t);   

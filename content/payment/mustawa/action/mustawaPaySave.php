@@ -1,4 +1,5 @@
 <?php
+sleep(2);
     header("content-type:text/javascript");
     include '../../../../connect.php';
     

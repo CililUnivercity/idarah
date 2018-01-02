@@ -251,6 +251,54 @@
                              WHERE s.ft_id='124' AND srx.term='2' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
                              ");
         $dir42Count = mysqli_num_rows($dir42);
+        //-------------------------------------------------------DAKWAH-------------------------------------------------
+        //DAKWAH class 1  term 1
+        $dak11 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='1' AND s.class='$first' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak11Count = mysqli_num_rows($dak11);
+        
+        //DAKWAH class 1  term 2
+        $dak12 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='2' AND s.class='$first' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak12Count = mysqli_num_rows($dak12);
+        
+        //DAKWAH class 2  term 1
+        $dak21 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='1' AND s.class='$second' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak21Count = mysqli_num_rows($dak21);
+        
+        //DAKWAH class 2  term 2
+        $dak22 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='2' AND s.class='$second' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak22Count = mysqli_num_rows($dak22);
+        
+        //DAKWAH class 3  term 1
+        $dak31 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='1' AND s.class='$third' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak31Count = mysqli_num_rows($dak31);
+        
+        //DAKWAH class 3  term 2
+        $dak32 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='2' AND s.class='$third' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak32Count = mysqli_num_rows($dak32);
+        
+        //DAKWAH class 4  term 1
+        $dak41 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='1' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak41Count = mysqli_num_rows($dak41);
+        
+        //DAKWAH class 4  term 2
+        $dak42 = mysqli_query($con, "SELECT s.*,srx.* FROM students s INNER JOIN student_register_exam srx ON s.st_id=srx.st_id
+                             WHERE s.ft_id='125' AND s.dp_id='28' AND srx.term='2' AND s.class='$fordth' AND srx.year='$cy' AND (srx.pay_status='Belum bayar' OR srx.pay_status='BELUM LUNAS')
+                             ");
+        $dak42Count = mysqli_num_rows($dak42);
     ?>
 
     <h4><span class="glyphicon glyphicon-usd"></span> BAYAR UJIAN MENGIKUT KELAS</h4>
@@ -266,6 +314,7 @@
                     <td align="center">SYARIAH</td>
                     <td align="center">USULUDDIN</td>
                     <td align="center">DIRASAT</td>
+                    <td align="center">MM DAKWAH</td>
                 </tr>
                 
                 <tr align="center">
@@ -275,6 +324,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $first ?>', '122', '')"><?= $sya11Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $first ?>', '123', '')"><?= $usu11Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $first ?>', '124', '')"><?= $dir11Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $first ?>', '125', '28')"><?= $dak11Count ?></a></td>
                 </tr>
             
                 <tr align="center">
@@ -284,6 +334,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $second ?>', '122', '')"><?= $sya21Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $second ?>', '123', '')"><?= $usu21Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $second ?>', '124', '')"><?= $dir21Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $second ?>', '125', '28')"><?= $dak21Count ?></a></td>
                 </tr>
                 
                 <tr align="center">
@@ -293,6 +344,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $third ?>', '122', '')"><?= $sya31Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $third ?>', '123', '')"><?= $usu31Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $third ?>', '124', '')"><?= $dir31Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $third ?>', '125', '28')"><?= $dak31Count ?></a></td>
                 </tr>
                 
                 <tr align="center">
@@ -302,6 +354,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $fordth ?>', '122', '')"><?= $sya41Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $fordth ?>', '123', '')"><?= $usu41Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $fordth ?>', '124', '')"><?= $dir41Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('1', '<?= $cy ?>', '<?= $fordth ?>', '125', '28')"><?= $dak41Count ?></a></td>
                 </tr>
                 
             </table>
@@ -319,6 +372,7 @@
                     <td align="center">SYARIAH</td>
                     <td align="center">USULUDDIN</td>
                     <td align="center">DIRASAT</td>
+                    <td align="center">MM DAKWAH</td>
                 </tr>
                 
                 <tr align="center">
@@ -328,6 +382,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $first ?>', '122', '')"><?= $sya12Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $first ?>', '123', '')"><?= $usu12Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $first ?>', '124', '')"><?= $dir12Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $first ?>', '125', '28')"><?= $dak12Count ?></a></td>
                 </tr>
             
                 <tr align="center">
@@ -337,6 +392,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $second ?>', '122', '')"><?= $sya22Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $second ?>', '123', '')"><?= $usu22Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $second ?>', '124', '')"><?= $dir22Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $first ?>', '125', '28')"><?= $dak22Count ?></a></td>
                 </tr>
                 
                 <tr align="center">
@@ -346,6 +402,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $third ?>', '122', '')"><?= $sya32Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $third ?>', '123', '')"><?= $usu32Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $third ?>', '124', '')"><?= $dir32Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $first ?>', '125', '28')"><?= $dak32Count ?></a></td>
                 </tr>
                 
                 <tr align="center">
@@ -355,6 +412,7 @@
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $fordth ?>', '122', '')"><?= $sya42Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $fordth ?>', '123', '')"><?= $usu42Count ?></a></td>
                     <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $fordth ?>', '124', '')"><?= $dir42Count ?></a></td>
+                    <td align="center"><a href="#" onclick="examPayByClass('2', '<?= $cy ?>', '<?= $fordth ?>', '125', '28')"><?= $dak42Count ?></a></td>
                 </tr>
                 
             </table>

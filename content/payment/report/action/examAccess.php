@@ -27,6 +27,7 @@
             </tr>
             <?php 
                 $sql = examAccess($termRg, $year, $class, $faculty, $department);
+                //echo "alert('$department');";
                 $i = 1;
                 while ($result = mysqli_fetch_array($sql)){
                     $firstname_rumi = str_replace("\'", "&#39;", $result['firstname_rumi']);

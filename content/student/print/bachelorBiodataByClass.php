@@ -72,7 +72,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <td align="center"><div id="main">نام - نسب</div></td>
                         <td align="center">Alamat</td>
                         <td align="center">NAMA IBU</td>
+                        <td align="center">PEKERJAAN IBU</td>
                         <td align="center">NAMA BAPA</td>
+                        <td align="center">PEKERJAAN BAPA</td>
+                        <td align="center">STATUS KELUARGA</td>
                         <td align="center">SANAWI DARI</td>
                     </tr>
                     <?php 
@@ -95,6 +98,21 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             $mother_name = str_replace("\'", "&#39;", $result['mother_name']);
                             $mother_lastname = str_replace("\'", "&#39;", $result['mother_lastname']);
                             $sanawi_graduate = str_replace("\'", "&#39;", $result['sanawi_graduate']);
+                            $father_job = str_replace("\'", "&#39;", $result['father_job']);
+                            $mother_job = str_replace("\'", "&#39;", $result['mother_job']);
+                            $familyStatus = str_replace("\'", "&#39;", $result['familyStatus']);
+                            
+                            if($familyStatus=='1'){
+                                $fst = "Ibu bapa masih bersama";
+                            }else if($familyStatus=='2'){
+                                $fst = "Bercerai";
+                            }else if($familyStatus=='3'){
+                                $sft = "Bapa meninggal";
+                            }else if($familyStatus=='4'){
+                                $sft = "Ibu meninggal";
+                            }else if($familyStatus=='5'){
+                                $sft = "Ibu bapa meninggal";
+                            }
                     ?>
                     <tr style=" line-height: 5px;">
                         <td align="center" width="3%"><?= $i ?></td>
@@ -103,7 +121,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <td align="right" width="15%"><div id="subText"><?= $firstname_jawi ?> - <?= $lastname_jawi ?></div></td>
                         <td align="left" width="25%"><?= $house_number ?> &nbsp; <b>ม.</b><?= $place ?> &nbsp; <b>ถนน.</b><?= $t_road ?> &nbsp; <b>หมู่บ้าน.</b><?= $t_village_name ?> <b>ต.</b><?= $t_subdistrict ?> &nbsp; <b>อ.</b> <?= $t_district ?> <b>จ.</b><?= $t_province_sec ?> <?= $post ?></td>
                         <td align="left"><?= $mother_name ?> - <?= $mother_lastname ?></td>
+                        <td align="left"><?= $mother_job ?></td>
                         <td align="left"><?= $father_name ?> - <?= $father_lastname ?></td>
+                        <td align="left"><?= $father_job ?></td>
+                        <td align="left"><?= $fst ?></td>
                         <td align="right" width="5%"><div id="subText"><?= $sanawi_graduate ?></div></td>
                     </tr>
                     <?php

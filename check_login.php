@@ -4,7 +4,7 @@ function login(){
 
 	require_once("connect.php");
 	
-        if(isset($_POST['save'])){
+    if(isset($_POST['save'])){
 	$strUsername = mysqli_real_escape_string($con,$_POST['txtUsername']);
 	$strPassword = mysqli_real_escape_string($con,$_POST['txtPassword']);
 
@@ -28,7 +28,7 @@ function login(){
             //*** Go to Main page
             header("location:main.php?page=main");
             
-		echo "NO.POKOK atau PASSWORD salah ,";?> <a href="index.php">Login lagi</a>
+			echo "NO.POKOK atau PASSWORD salah ,";?> <a href="index.php">Login lagi</a>
 	<?php	exit();
 	}else{
                         echo "Tunggu sekejab...";

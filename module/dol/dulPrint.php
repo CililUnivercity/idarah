@@ -27,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
     <title>JISDA | Kertas dur</title>
     
@@ -92,7 +93,7 @@
                     </tr>
                     <tr>
                         <td>
-                            KOD DAFTAR
+                            <b>KOD DAFTAR</b>
                         </td>
                         <td>
                             <font color="grey"><?= $dulCode ?></font>
@@ -101,14 +102,14 @@
                             <font color="grey"><?= $dulCode ?></font>
                         </td>
                         <td align="right">
-                            <div id="subText">
-                            كوددفتر
+                            <div id="subText"><b>
+                                    كوددفتر</b>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td align="left">
-                            NO.POKOK 
+                            <b>NO.POKOK </b>
                         </td>
                         <td align="left">
                             <font color="grey"><?= $student_id ?></font>
@@ -117,30 +118,30 @@
                             <font color="grey"><?= $student_id ?></font> 
                         </td>
                         <td align="right">
-                            <div id="subText">
-                            نمبرفوكؤ 
+                            <div id="subText"><b>
+                                    نمبرفوكؤ </b>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            NAMA-NASAB
+                            <b>NAMA-NASAB</b>
                         </td>
                         <td align="left">
                             <font color="grey"><?= $frname ?> - <?= $lrname ?></font>
                         </td>
                         <td align="right">
-                            <font color="grey"><?= $faname ?> - <?= $laname ?></font>
+                            <font color="grey"><div id="subText"><?= $faname ?> - <?= $laname ?></div></font>
                         </td>
                         <td align="right">
-                            <div id="subText">
-                            نام - نسب 
+                            <div id="subText"><b>
+                                    نام - نسب </b>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            TARIKH DAFTAR
+                            <b>TARIKH DAFTAR</b>
                         </td>
                         <td align="left"> 
                             <font color="grey"><?= $dr_date ?></font>
@@ -149,20 +150,22 @@
                             <font color="grey"><?= $dr_date ?></font>
                         </td>
                         <td align="right">
-                            <div id="subText">
-                            تاريخ دفتر  
+                            <div id="subText"><b>
+                                    تاريخ دفتر  </b>
                             </div>
                         </td>
                     </tr>
                 </table>
         <br>
-                <table border="1px" width="100%">
-                      <tr bgcolor="grey">
-                        <td align="center"><b>جمله دويت</b></td>
-                        <td align="center"><b>فنشرح</b></td>
-                        <td align="center"><b>مات كلية</b></td>
-                        <td align="center"><b>كود</b></td>
-                        <td align="center" width="80px"><b>بيل</b></td>
+        <table border="1px" width="100%" class="table table-bordered">
+                      <tr bgcolor="">
+                        <td align="center"><div id="subText"><b>جمله دويت</b></div></td>
+                        <td align="center"><div id="subText"><b>مركه</b></div></td>
+                        <td align="center"><div id="subText"><b>تندا تاڠن</b></div></td>
+                        <td align="center"><div id="subText"><b>فنشرح</b></div></td>
+                        <td align="center"><div id="subText"><b>مات كلية</b></div></td>
+                        <td align="center"><div id="subText"><b>كود</b></div></td>
+                        <td align="center" <div id="subText"><b>بيل</b></div></td>
                       </tr>
                     <tbody>
                         <?php
@@ -173,7 +176,7 @@
                                 $money = $rowDulSubject['money'];
                                 
                             //Get s_id from studentSubject table
-                            $studentSubject = mysqli_query($con, "SELECT * FROM studentSubject WHERE ss_id='$ss_id'");
+                            $studentSubject = mysqli_query($con, "SELECT * FROM studentsubject WHERE ss_id='$ss_id'");
                             $rowStudentSubject = mysqli_fetch_array($studentSubject);
                             $s_id = $rowStudentSubject['s_id'];
                             $t_id = $rowStudentSubject['t_id'];
@@ -200,6 +203,14 @@
                           </td>
                           
                           <td align="center">
+                              
+                          </td>
+                          
+                          <td align="center">
+                              
+                          </td>
+                          
+                          <td align="center">
                               <font size="2px">
                                   <?= $t_fname ?> - <?= $t_lname ?>
                               </font>
@@ -207,7 +218,7 @@
                           
                           <td align="center">
                               <font size="2px">
-                                <?= $s_aname ?> <?= $s_rname ?>
+                                <div id="subText"><?= $s_aname ?></div> <?= $s_rname ?>
                               </font>
                           </td>
                           
@@ -232,8 +243,8 @@
                             <td align="center">
                                 <?= $sumMoney ?>
                             </td>
-                            <td colspan="4" align="center">
-                                جمله دويت سموا
+                            <td colspan="6" align="right"><div id="subText"><b>
+                                        جمله دويت سموا</b></div>
                             </td>
                         </tr>
                     </tbody>

@@ -67,16 +67,23 @@
                 
                 <table class="table table-hover table-striped table-bordered">
                     <tr>
-                        <td align="center"><div id="subText"><b>فيليهن كدوا</b></div></div></td>
+                        <td align="center"><div id="subText"><b>فيليهن كدوا</b></div></td>
                         <td align="center"><div id="subText"><b>فيليهن فرتام</b></div></td>
                         <td align="center"><div id="subText"><b>نمبر</b></div></td>
-                        <td align="center"><div id="subText"><b>بيليق</b></div></td>
+                        <td align="center"><div id="subText"><b>تليفون</b></div></td>
+                        <td align="center"><div id="subText"><b>نمبر دفتر</b></div></td>
+                        <td align="center"><div id="subText"><b>کمفوڠ</b></div></td>
                         <td align="center"><div id="subText"><b>سكوله</b></div></td>
                         <td align="center"><div id="subText"><b>نام - نسب</b></div></td>
                         <td align="center"><div id="subText"><b>بيل</b></div></td> 
                     </tr>
                     <?php
-                        $pretestMen = mysqli_query($con, "SELECT p.*,s.* FROM pretest p JOIN students s ON p.st_id=s.st_id WHERE p.testClass='$class'");
+                        //Admision yaer setting
+                        $admissionRegister = mysqli_query($con, "SELECT * FROM admissionRegister WHERE ar_status='1'");
+                        $admissionRegisterRow = mysqli_fetch_array($admissionRegister);
+                        $cyear1 = $admissionRegisterRow['ar_year'];
+                        
+                        $pretestMen = mysqli_query($con, "SELECT p.*,s.* FROM pretest p JOIN students s ON p.st_id=s.st_id WHERE p.testClass='$class' AND p.pre_register_year='$cyear1' ORDER BY p.odrNumber");
                         $i = 1;
                         while($rowPretestMen = mysqli_fetch_array($pretestMen)){
                             $fname = str_replace("\'", "&#39;", $rowPretestMen["firstname_jawi"]);
@@ -84,6 +91,9 @@
                             $sanawi_graduate = str_replace("\'", "&#39;", $rowPretestMen["sanawi_graduate"]);
                             $testClass = $rowPretestMen['testClass'];
                             $testNumber = $rowPretestMen['testNumber'];
+                            $odrNumber = $rowPretestMen['odrNumber'];
+                            $sanawiVillage = str_replace("\'", "&#39;", $rowPretestMen["sanawiVillage"]);
+                            $telephone = $rowPretestMen["telephone"];
 
                             //Faculty and department choesed
                             $first_ftId = $rowPretestMen['first_ftId'];
@@ -99,16 +109,21 @@
                                     $selected = 'S';
                                 }elseif($fId == '123'){
                                     $selected = 'U';
-                                }else{
+                                }elseif($sId == '124'){
                                     $selected = 'D';
                                 }
-                            }else{
+                            }elseif($first_dpId != '0'){
                                 $fId = $first_dpId;
-                                //Setting
-                                if($fId == '22'){
-                                    $selected = 'PAI';
-                                }else{
-                                    $selected = 'PBSM';
+                                switch ($fId){
+                                    case 22:
+                                        $selected = "PAI";
+                                        break;
+                                    case 23:
+                                        $selected = "PBSM";
+                                        break;
+                                    case 28:
+                                        $selected = "MM Dakwah";
+                                        break;
                                 }
                             }
 
@@ -120,16 +135,21 @@
                                     $selected2 = 'S';
                                 }elseif($sId == '123'){
                                     $selected2 = 'U';
-                                }else{
+                                }elseif($sId == '124'){
                                     $selected2 = 'D';
                                 }
-                            }else{
-                                $sId = $second_dpId;
-                                //Setting
-                                if($sId == '22'){
-                                    $selected2 = 'PAI';
-                                }else{
-                                    $selected2 = 'PBSM';
+                            }elseif($second_dpId != '0'){
+                                $fId = $second_dpId;
+                                switch ($fId){
+                                    case 22:
+                                        $selected2 = "PAI";
+                                        break;
+                                    case 23:
+                                        $selected2 = "PBSM";
+                                        break;
+                                    case 28:
+                                        $selected2 = "MM Dakwah";
+                                        break;
                                 }
                             }
 
@@ -139,9 +159,11 @@
                             <td align="center"><?= $selected2 ?></td>
                             <td align="center"><?= $selected ?></td>
                             <td align="center"><?= $testNumber ?></td>
-                            <td align="center"><?= $testClass ?></td>
-                            <td align="center"><div id="subText"><?= $sanawi_graduate ?></div></td>
-                            <td align="center"><div id="subText"><?= $fname ?> - <?= $lname ?></div></td>
+                            <td align="center"><?= $telephone ?></td>
+                            <td align="center"><?= $odrNumber ?></td>
+                            <td align="right"><div id="subText"><?= $sanawiVillage ?></div></td>
+                            <td align="right"><div id="subText"><?= $sanawi_graduate ?></div></td>
+                            <td align="right"><div id="subText"><?= $fname ?> - <?= $lname ?></div></td>
                             <td align="center"><?= $i ?></td>
                         </tr>
                     <?php
