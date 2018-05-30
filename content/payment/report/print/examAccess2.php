@@ -94,13 +94,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
 
         <table x:str border="1" width="100%">
             <tr style=" line-height: 5px;">
-                        <td aling="center">UJIAN</td>
-                        <td aling="center">YURAN</td>
-                        <td align="center">JENIS KELAMIN</td>
-                        <td align="center"><div id="main"> نسب</div></td>
-                        <td align="center"><div id="main">نام </div></td>
-                        <td align="center">NIM</td>
                         <td align="center">BIL</td>
+                        <td align="center">NIM</td>
+                        <td align="center"><div id="main">نام </div></td>
+                        <td align="center"><div id="main"> نسب</div></td>
+                        <td align="center">JENIS KELAMIN</td>
+                        <td aling="center">YURAN</td>
+                        <td aling="center">UJIAN</td>
                     </tr>
                     <?php 
                         $i = 1;
@@ -111,13 +111,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             $lastname_jawi = str_replace("\'", "&#39;", $result['lastname_jawi']);
                     ?>
                     <tr style=" line-height: 5px;">
-                        <td align="center"><?= $result['ec'] ?></td>
-                        <td align="center"><?= $result['yc'] ?></td>
-                        <td align="center"><?= $result['gender'] ?></td>
-                         <td align="right"><div id="subText"><?= $lastname_jawi ?></div></td>
-                        <td align="right"><div id="subText"><?= $firstname_jawi ?></div></td>
-                        <td align="center"><?= $result['student_id'] ?></td>
                         <td align="center"><?= $i ?></td>
+                        <td align="center"><?= $result['student_id'] ?></td>
+                        <td align="right"><div id="subText"><?= $firstname_jawi ?></div></td>
+                        <td align="right"><div id="subText"><?= $lastname_jawi ?></div></td>
+                        <td align="center"><?= $result['gender'] ?></td>
+                        <td align="center"><?= $result['yc'] ?></td>
+                        <td align="center"><?= $result['ec'] ?></td>
                     </tr>
                     <?php
                         $i++;
